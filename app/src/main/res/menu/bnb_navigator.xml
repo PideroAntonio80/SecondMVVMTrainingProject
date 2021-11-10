@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/allListFragment"
+        android:icon="@drawable/ic_bnb_nav_all_list"
+        android:title="@string/bnbNavigator_all_fragment_text"/>
+
+    <item
+        android:id="@+id/orderedListFragment"
+        android:icon="@drawable/ic_bnb_alphabetical_list"
+        android:title="@string/bnbNavigator_order_fragment_text"/>
+
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_bnb_nav_search"
+        android:title="@string/bnbNavigator_search_fragment_text"/>
+
+</menu>

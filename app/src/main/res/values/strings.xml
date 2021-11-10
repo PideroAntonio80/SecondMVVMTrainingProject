@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">SecondMVVMTrainingProject</string>
+    <string name="bnbNavigator_all_fragment_text">Todos</string>
+    <string name="bnbNavigator_order_fragment_text">Orden Alfabético</string>
+    <string name="bnbNavigator_search_fragment_text">Buscar</string>
+    <string name="fragment_detail_tvWeightDetail_text">Weight:</string>
+    <string name="fragment_detail_tvHeightDetail_text">Height:</string>
+    <string name="fragment_detail_tvTypeDetail_text">Type:</string>
+    <string name="activity_main_fabFavourites">Añadir Tarea</string>
+    <string name="pokemon_row_ivPicture_content_description">Contenido imagen lista pokemons</string>
+    <string name="fab_pokemon_added">Pokemon añadido a tu equipo</string>
+    <string name="pokemon_added_to_go">Ir a Mi Equipo</string>
+    <string name="menu_item_pokemon_book">Pokemon Book</string>
+    <string name="menu_item_team">My Team</string>
+    <string name="menu_item_Play">Play</string>
+    <string name="menu_item_player_records">Player Records</string>
+    <string name="menu_item_close_session">Close Session</string>
+    <string name="menu_item_contact">Contact Us</string>
+    <string name="pokemon_battle_card_title">POKEMON BATTLE CARD</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="nav_header_title_text">Pokemon Battle Card</string>
+    <string name="auth_wellcome">Bienvenido</string>
+    <string name="auth_see_you">Hasta pronto</string>
+    <string name="error_no_network">Sin señal de red</string>
+    <string name="error_code">Código del error</string>
+    <string name="activity_main_waiting_text">Espere un momento, por favor</string>
+    <string name="finish_session">Sesión finalizada</string>
+    <string name="error_closing_session">No se pudo cerrar sesión</string>
+    <string name="menu_main_sign_out">Cerrar sesión</string>
+    <string name="app_cover_description">Portada de la app</string>
+
+    <string name="facebook_application_id" translatable="false">411092414019130</string>
+    <!-- Facebook Application ID, prefixed by 'fb'. Enables Chrome Custom tabs. -->
+    <string name="facebook_login_protocol_scheme" translatable="false">fb411092414019130</string>
+    <string name="my_team_title">MI EQUIPO</string>
+    <string name="repeated_pokemon">Ya has elegido este, escoge otro</string>
+    <string name="dialog_delete_title">Estás seguro?</string>
+    <string name="dialog_delete_confirm">Eliminar</string>
+    <string name="dialog_delete_cancel">Cancelar</string>
+    <string name="full_team">Tu equipo está completo</string>
+</resources>

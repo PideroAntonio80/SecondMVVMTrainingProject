@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorOnSecondary">@color/light_blue_900_dark</color>
+
+    <color name="light_blue_900">#01579b</color>
+    <color name="light_blue_900_dark">#002f6c</color>
+    <color name="light_blue_900_light">#4f83cc</color>
+
+    <color name="amber_900">#ff6f00</color>
+    <color name="amber_900_dark">#c43e00</color>
+    <color name="amber_900_light">#ffa040</color>
+
+    <color name="orange_500">#FF9800</color>
+    <color name="blue_google">#4285f4</color>
+    <color name="blue_facebook">#1877f2</color>
+    <color name="green_500">#4CAF50</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="pink">#880E4F</color>
+
+    <color name="yellow_a400">#ffea00</color>
+    <color name="yellow_a400_dark">#c7b800</color>
+
+    <color name="gray_100">#f5f5f5</color>
+</resources>

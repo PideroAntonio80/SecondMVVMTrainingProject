@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "731271325009",
+    "project_id": "secondmvvmtrainingproject",
+    "storage_bucket": "secondmvvmtrainingproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731271325009:android:1c9b6bf5093b6c99dd5f70",
+        "android_client_info": {
+          "package_name": "com.example.secondmvvmtrainingproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731271325009-cqn0qi7f7jqjef8ge2vntb5ejl6qh2qo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.secondmvvmtrainingproject",
+            "certificate_hash": "83d76e68cd3dc1473011cc67c91cc3650050932c"
+          }
+        },
+        {
+          "client_id": "731271325009-iqhhmr5qgh32unct46tdlrekgkosga1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHZTRc1BXk6z9maU1Kpo6iXRHJ_VgVODg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731271325009-iqhhmr5qgh32unct46tdlrekgkosga1t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
