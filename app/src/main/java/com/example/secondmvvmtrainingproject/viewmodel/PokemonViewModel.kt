@@ -3,22 +3,26 @@ package com.example.secondmvvmtrainingproject.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.secondmvvmtrainingproject.domain.GetAllPokemonsFeature
-import com.example.secondmvvmtrainingproject.model.PokemonDataModel
+import com.example.secondmvvmtrainingproject.data.repository.PokemonRepository
+import com.example.secondmvvmtrainingproject.domain.model.common.Success
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
+import com.example.secondmvvmtrainingproject.domain.usecase.pokemons.GetAllPokemonsUseCase
 import kotlinx.coroutines.launch
 
 class PokemonViewModel : ViewModel() {
 
-    val pokemonDataModel = MutableLiveData<List<PokemonDataModel>>()
+    val pokemonDataModel = MutableLiveData<ArrayList<PokemonDataModel>>()
 
-    var getAllPokemonsFeature = GetAllPokemonsFeature()
+    private val pokemonRepository = PokemonRepository()
+    private val getAllPokemonsFeature = GetAllPokemonsUseCase(pokemonRepository)
 
     fun onCreate() {
         viewModelScope.launch {
-            val result = getAllPokemonsFeature()
 
-            if (!result.isNullOrEmpty()) {
-                pokemonDataModel.postValue(result)
+            val result = getAllPokemonsFeature.build(null)
+
+            if (result is Success) {
+                pokemonDataModel.postValue(result.invoke())
             }
         }
     }

@@ -15,7 +15,7 @@ import com.example.secondmvvmtrainingproject.PokemonApplication
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.dao.PokemonEntity
 import com.example.secondmvvmtrainingproject.databinding.FragmentSearchingBinding
-import com.example.secondmvvmtrainingproject.model.PokemonDataModel
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
 import com.example.secondmvvmtrainingproject.view.PokemonTeamActivity
 import com.google.android.material.snackbar.Snackbar
 import org.jetbrains.anko.doAsync

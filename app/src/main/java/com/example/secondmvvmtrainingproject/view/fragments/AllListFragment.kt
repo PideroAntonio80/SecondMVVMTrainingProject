@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.FragmentAllListBinding
-import com.example.secondmvvmtrainingproject.model.PokemonDataModel
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
 import com.example.secondmvvmtrainingproject.view.adapters.PokemonAdapter
 
 private const val EXTRA_LIST = "param1"

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/allListFragment2">
+
+    <fragment
+        android:id="@+id/allListFragment2"
+        android:name="com.example.secondmvvmtrainingproject.view.fragments.AllListFragment"
+        android:label="fragment_all_list"
+        tools:layout="@layout/fragment_all_list" >
+        <action
+            android:id="@+id/action_allListFragment2_to_alphabeticalOrderFragment"
+            app:destination="@id/alphabeticalOrderFragment" />
+        <action
+            android:id="@+id/action_allListFragment2_to_searchingFragment"
+            app:destination="@id/searchingFragment" />
+        <action
+            android:id="@+id/action_allListFragment2_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alphabeticalOrderFragment"
+        android:name="com.example.secondmvvmtrainingproject.view.fragments.AlphabeticalOrderFragment"
+        android:label="fragment_alphabetical_order"
+        tools:layout="@layout/fragment_alphabetical_order" >
+        <action
+            android:id="@+id/action_alphabeticalOrderFragment_to_allListFragment2"
+            app:destination="@id/allListFragment2" />
+        <action
+            android:id="@+id/action_alphabeticalOrderFragment_to_searchingFragment"
+            app:destination="@id/searchingFragment" />
+        <action
+            android:id="@+id/action_alphabeticalOrderFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchingFragment"
+        android:name="com.example.secondmvvmtrainingproject.view.fragments.SearchingFragment"
+        android:label="fragment_searching"
+        tools:layout="@layout/fragment_searching" >
+        <action
+            android:id="@+id/action_searchingFragment_to_allListFragment2"
+            app:destination="@id/allListFragment2" />
+        <action
+            android:id="@+id/action_searchingFragment_to_alphabeticalOrderFragment"
+            app:destination="@id/alphabeticalOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.secondmvvmtrainingproject.view.fragments.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_allListFragment2"
+            app:destination="@id/allListFragment2" />
+        <action
+            android:id="@+id/action_detailFragment_to_alphabeticalOrderFragment"
+            app:destination="@id/alphabeticalOrderFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_searchingFragment"
+            app:destination="@id/searchingFragment" />
+    </fragment>
+</navigation>

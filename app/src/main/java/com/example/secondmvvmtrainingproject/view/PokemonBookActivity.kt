@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.ActivityPokemonBookBinding
-import com.example.secondmvvmtrainingproject.model.PokemonDataModel
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
 import com.example.secondmvvmtrainingproject.view.fragments.AllListFragment
 import com.example.secondmvvmtrainingproject.view.fragments.AlphabeticalOrderFragment
 import com.example.secondmvvmtrainingproject.view.fragments.SearchingFragment

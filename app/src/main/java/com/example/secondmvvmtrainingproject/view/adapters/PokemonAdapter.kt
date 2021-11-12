@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.PokemonRowBinding
-import com.example.secondmvvmtrainingproject.model.PokemonDataModel
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
 
 class PokemonAdapter(private val pokemons: List<PokemonDataModel>,
                      private val context: Context,
