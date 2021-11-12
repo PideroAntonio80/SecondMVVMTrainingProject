@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.secondmvvmtrainingproject.R
-import com.example.secondmvvmtrainingproject.dao.PokemonEntity
+import com.example.secondmvvmtrainingproject.data.local.model.PokemonEntity
 import com.example.secondmvvmtrainingproject.databinding.PokemonRowTeamBinding
 
 class PokemonTeamAdapter(private var pokemons: MutableList<PokemonEntity>,

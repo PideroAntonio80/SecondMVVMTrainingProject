@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.dao
+package com.example.secondmvvmtrainingproject.data.local.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

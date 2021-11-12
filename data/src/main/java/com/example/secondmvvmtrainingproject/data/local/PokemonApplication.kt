@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.dao
+package com.example.secondmvvmtrainingproject.data.local
 
 import android.app.Application
 import androidx.room.Room

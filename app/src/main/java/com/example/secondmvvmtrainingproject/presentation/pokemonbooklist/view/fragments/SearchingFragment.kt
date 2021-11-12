@@ -12,8 +12,8 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.secondmvvmtrainingproject.R
-import com.example.secondmvvmtrainingproject.dao.PokemonApplication
-import com.example.secondmvvmtrainingproject.dao.PokemonEntity
+import com.example.secondmvvmtrainingproject.data.local.PokemonApplication
+import com.example.secondmvvmtrainingproject.data.local.model.PokemonEntity
 import com.example.secondmvvmtrainingproject.databinding.FragmentSearchingBinding
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
 import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity
