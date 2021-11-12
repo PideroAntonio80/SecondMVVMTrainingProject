@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.view
+package com.example.secondmvvmtrainingproject.presentation.main
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -19,6 +19,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.ActivityMainBinding
+import com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.PokemonBookActivity
+import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
@@ -105,20 +107,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     "com.example.secondmvvmtrainingproject",
                     PackageManager.GET_SIGNING_CERTIFICATES)
                 for (signature in info.signingInfo.apkContentsSigners) {
-                    val md = MessageDigest.getInstance("SHA");
-                    md.update(signature.toByteArray());
+                    val md = MessageDigest.getInstance("SHA")
+                    md.update(signature.toByteArray())
                     Log.d("API >= 28 KeyHash:",
-                        Base64.encodeToString(md.digest(), Base64.DEFAULT));
+                        Base64.encodeToString(md.digest(), Base64.DEFAULT))
                 }
             } else {
                 val info = getPackageManager().getPackageInfo(
                     "com.example.secondmvvmtrainingproject",
-                    PackageManager.GET_SIGNATURES);
+                    PackageManager.GET_SIGNATURES)
                 for (signature in info.signatures) {
-                    val md = MessageDigest.getInstance("SHA");
-                    md.update(signature.toByteArray());
+                    val md = MessageDigest.getInstance("SHA")
+                    md.update(signature.toByteArray())
                     Log.d("API < 28 KeyHash:",
-                        Base64.encodeToString(md.digest(), Base64.DEFAULT));
+                        Base64.encodeToString(md.digest(), Base64.DEFAULT))
                 }
             }
         } catch (e: Exception) {

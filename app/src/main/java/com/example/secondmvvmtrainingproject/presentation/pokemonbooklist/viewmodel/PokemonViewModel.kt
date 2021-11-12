@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.viewmodel
+package com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.view.adapters
+package com.example.secondmvvmtrainingproject.presentation.pokemonteam.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

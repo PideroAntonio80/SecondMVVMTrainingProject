@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".view.PokemonBookActivity">
+    tools:context=".presentation.pokemonbooklist.view.PokemonBookActivity">
 
     <!--<androidx.fragment.app.FragmentContainerView
         android:id="@+id/flContainer"

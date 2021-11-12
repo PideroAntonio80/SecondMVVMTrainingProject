@@ -10,7 +10,7 @@
     android:layout_height="match_parent"
     android:layout_marginBottom="?attr/actionBarSize"
 
-    tools:context=".view.fragments.SearchingFragment">
+    tools:context=".presentation.pokemonbooklist.view.fragments.SearchingFragment">
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/svSearch"

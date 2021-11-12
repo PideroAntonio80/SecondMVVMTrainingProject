@@ -1,15 +1,15 @@
-package com.example.secondmvvmtrainingproject.view
+package com.example.secondmvvmtrainingproject.presentation.pokemonteam.view
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.secondmvvmtrainingproject.PokemonApplication
+import com.example.secondmvvmtrainingproject.dao.PokemonApplication
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.dao.PokemonEntity
 import com.example.secondmvvmtrainingproject.databinding.ActivityPokemonTeamBinding
-import com.example.secondmvvmtrainingproject.view.adapters.PokemonTeamAdapter
+import com.example.secondmvvmtrainingproject.presentation.pokemonteam.adapter.PokemonTeamAdapter
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

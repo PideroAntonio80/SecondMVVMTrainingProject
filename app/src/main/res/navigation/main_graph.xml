@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/allListFragment2"
-        android:name="com.example.secondmvvmtrainingproject.view.fragments.AllListFragment"
+        android:name="com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments.AllListFragment"
         android:label="fragment_all_list"
         tools:layout="@layout/fragment_all_list" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/alphabeticalOrderFragment"
-        android:name="com.example.secondmvvmtrainingproject.view.fragments.AlphabeticalOrderFragment"
+        android:name="com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments.AlphabeticalOrderFragment"
         android:label="fragment_alphabetical_order"
         tools:layout="@layout/fragment_alphabetical_order" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchingFragment"
-        android:name="com.example.secondmvvmtrainingproject.view.fragments.SearchingFragment"
+        android:name="com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments.SearchingFragment"
         android:label="fragment_searching"
         tools:layout="@layout/fragment_searching" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.secondmvvmtrainingproject.view.fragments.DetailFragment"
+        android:name="com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <action

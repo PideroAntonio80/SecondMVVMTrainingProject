@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.view.fragments
+package com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments
 
 import android.app.Activity
 import android.content.Context
@@ -11,12 +11,12 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.example.secondmvvmtrainingproject.PokemonApplication
 import com.example.secondmvvmtrainingproject.R
+import com.example.secondmvvmtrainingproject.dao.PokemonApplication
 import com.example.secondmvvmtrainingproject.dao.PokemonEntity
 import com.example.secondmvvmtrainingproject.databinding.FragmentSearchingBinding
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
-import com.example.secondmvvmtrainingproject.view.PokemonTeamActivity
+import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity
 import com.google.android.material.snackbar.Snackbar
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -40,7 +40,7 @@ class SearchingFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentSearchingBinding.inflate(inflater, container, false)
 

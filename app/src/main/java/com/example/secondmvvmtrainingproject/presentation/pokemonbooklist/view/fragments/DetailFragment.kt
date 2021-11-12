@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.view.fragments
+package com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.example.secondmvvmtrainingproject.PokemonApplication
+import com.example.secondmvvmtrainingproject.dao.PokemonApplication
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.dao.PokemonEntity
 import com.example.secondmvvmtrainingproject.databinding.FragmentDetailBinding
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
-import com.example.secondmvvmtrainingproject.view.PokemonTeamActivity
+import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity
 import com.google.android.material.snackbar.Snackbar
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -35,7 +35,7 @@ class DetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentDetailBinding.inflate(inflater, container, false)
 

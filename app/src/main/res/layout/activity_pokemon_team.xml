@@ -10,7 +10,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/common_padding_extra_min"
 
-    tools:context=".view.PokemonTeamActivity">
+    tools:context=".presentation.pokemonteam.view.PokemonTeamActivity">
 
     <TextView
         android:id="@+id/tvTeamTitle"

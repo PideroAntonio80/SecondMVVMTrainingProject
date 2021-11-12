@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.view
+package com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -7,10 +7,10 @@ import androidx.fragment.app.Fragment
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.ActivityPokemonBookBinding
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
-import com.example.secondmvvmtrainingproject.view.fragments.AllListFragment
-import com.example.secondmvvmtrainingproject.view.fragments.AlphabeticalOrderFragment
-import com.example.secondmvvmtrainingproject.view.fragments.SearchingFragment
-import com.example.secondmvvmtrainingproject.viewmodel.PokemonViewModel
+import com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments.AllListFragment
+import com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments.AlphabeticalOrderFragment
+import com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments.SearchingFragment
+import com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.viewmodel.PokemonViewModel
 
 class PokemonBookActivity : AppCompatActivity() {
 

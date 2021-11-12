@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".PokemonApplication"
+        android:name=".dao.PokemonApplication"
         android:allowBackup="true"
         android:icon="@drawable/pkb"
         android:label="@string/app_name"
@@ -14,13 +14,13 @@
         android:theme="@style/Theme.SecondMVVMTrainingProject"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".view.PokemonTeamActivity"
+            android:name="com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity"
             android:exported="true" />
         <activity
-            android:name=".view.PokemonBookActivity"
+            android:name="com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.PokemonBookActivity"
             android:exported="true" />
         <activity
-            android:name=".view.MainActivity"
+            android:name="com.example.secondmvvmtrainingproject.presentation.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

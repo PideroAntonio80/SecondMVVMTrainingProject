@@ -1,10 +1,9 @@
-package com.example.secondmvvmtrainingproject
+package com.example.secondmvvmtrainingproject.dao
 
 import android.app.Application
 import androidx.room.Room
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.secondmvvmtrainingproject.dao.PokemonDatabase
 
 class PokemonApplication : Application() {
     companion object {

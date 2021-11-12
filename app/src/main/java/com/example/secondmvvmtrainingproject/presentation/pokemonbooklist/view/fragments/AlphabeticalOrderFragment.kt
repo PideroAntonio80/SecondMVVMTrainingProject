@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.view.fragments
+package com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.FragmentAlphabeticalOrderBinding
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
-import com.example.secondmvvmtrainingproject.view.adapters.PokemonAdapter
+import com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.adapter.PokemonAdapter
 
 private const val EXTRA_ALPHABETICAL_LIST = "param1"
 
@@ -29,7 +29,7 @@ class AlphabeticalOrderFragment : Fragment(), PokemonAdapter.ItemClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentAlphabeticalOrderBinding.inflate(inflater, container, false)
 
