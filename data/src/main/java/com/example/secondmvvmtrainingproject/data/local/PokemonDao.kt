@@ -1,7 +1,7 @@
 package com.example.secondmvvmtrainingproject.data.local
 
 import androidx.room.*
-import com.example.secondmvvmtrainingproject.data.local.model.PokemonEntity
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntity
 
 @Dao
 interface PokemonDao {

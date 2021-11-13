@@ -1,17 +1,16 @@
-package com.example.secondmvvmtrainingproject.presentation.pokemonteam.adapter
+package com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.secondmvvmtrainingproject.R
-import com.example.secondmvvmtrainingproject.data.local.model.PokemonEntity
 import com.example.secondmvvmtrainingproject.databinding.PokemonRowTeamBinding
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntity
 
-class PokemonTeamAdapter(private var pokemons: MutableList<PokemonEntity>,
+class PokemonTeamAdapter(private var pokemons: ArrayList<PokemonEntity>,
                          private val context: Context,
                          private val itemTeamClickListener: ItemTeamClickListener?
 ) : RecyclerView.Adapter<PokemonTeamAdapter.ViewHolder>() {
@@ -28,7 +27,7 @@ class PokemonTeamAdapter(private var pokemons: MutableList<PokemonEntity>,
 
     override fun getItemCount(): Int = pokemons.size
 
-    fun setPokemons(pokemons: MutableList<PokemonEntity>) {
+    /*fun setPokemons(pokemons: MutableList<PokemonEntity>) {
         this.pokemons = pokemons
         notifyDataSetChanged()
     }
@@ -48,7 +47,7 @@ class PokemonTeamAdapter(private var pokemons: MutableList<PokemonEntity>,
             pokemons.removeAt(index)
             notifyItemRemoved(index)
         }
-    }
+    }*/
 
     inner class ViewHolder(view : View): RecyclerView.ViewHolder(view) {
         private val binding = PokemonRowTeamBinding.bind(view)

@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.data.local.model
+package com.example.secondmvvmtrainingproject.domain.model.pokemons
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
