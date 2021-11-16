@@ -6,16 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
-import com.example.secondmvvmtrainingproject.data.local.PokemonApplication
 import com.example.secondmvvmtrainingproject.R
-import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntity
 import com.example.secondmvvmtrainingproject.databinding.FragmentDetailBinding
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
 import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity
+import com.example.secondmvvmtrainingproject.presentation.pokemonteam.viewmodel.PokemonTeamViewModel
 import com.google.android.material.snackbar.Snackbar
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 private const val EXTRA_POKEMON = "param1"
 
@@ -25,11 +23,16 @@ class DetailFragment : Fragment() {
 
     private lateinit var pokemonDetail: PokemonDataModel
 
+    private val pokemonTeamViewModel: PokemonTeamViewModel by viewModels()
+
+    private var myMessage: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             pokemonDetail = it.getParcelable(EXTRA_POKEMON)!!
         }
+        pokemonTeamViewModel.onCreate()
     }
 
     override fun onCreateView(
@@ -41,26 +44,6 @@ class DetailFragment : Fragment() {
 
         initView(pokemonDetail)
 
-        binding.fabAddFav.setOnClickListener {
-            val pokemonEntity = PokemonEntity(id = pokemonDetail.id,
-                name = pokemonDetail.name, img = pokemonDetail.img,
-                weight = pokemonDetail.weight,
-                height = pokemonDetail.height,
-                type = pokemonDetail.type?.get(0).toString())
-            doAsync {
-                if (PokemonApplication.database.pokemonDao().getPokemonTeam().size >= 3) {
-                    uiThread {
-                        makeSnack(getString(R.string.full_team))
-                    }
-                } else {
-                    PokemonApplication.database.pokemonDao().addPokemonToTeam(pokemonEntity)
-
-                    uiThread {
-                        makeSnack(getString(R.string.fab_pokemon_added))
-                    }
-                }
-            }
-        }
         return binding.root
     }
 
@@ -70,7 +53,18 @@ class DetailFragment : Fragment() {
             tvNameDetail.text = pokemon.name
             tvWeightDetailFill.text = pokemon.weight
             tvHeightDetailFill.text = pokemon.height
-            tvTypeDetailFill.text = pokemon.type?.get(0) // TODO Undo
+            tvTypeDetailFill.text = pokemon.type?.get(0)
+        }
+
+        binding.fabAddFav.setOnClickListener {
+
+            pokemonTeamViewModel.getListAfterAddingPokemon(pokemon)
+
+            pokemonTeamViewModel.message.observe(this.viewLifecycleOwner, { currentMessage ->
+                myMessage = currentMessage
+
+                makeSnack(myMessage)
+            })
         }
     }
 

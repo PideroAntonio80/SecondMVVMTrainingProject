@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pokemon_already_selected">Ya está en tu equipo, elige otro</string>
+    <string name="full_team">Tu equipo está completo</string>
+    <string name="pokemon_added">Pokemon añadido a tu equipo</string>
+</resources>

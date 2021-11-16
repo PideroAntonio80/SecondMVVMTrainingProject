@@ -7,14 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.secondmvvmtrainingproject.R
-import com.example.secondmvvmtrainingproject.data.local.PokemonApplication
 import com.example.secondmvvmtrainingproject.databinding.ActivityPokemonTeamBinding
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntity
 import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.adapter.PokemonTeamAdapter
 import com.example.secondmvvmtrainingproject.presentation.pokemonteam.viewmodel.PokemonTeamViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class PokemonTeamActivity : AppCompatActivity(), PokemonTeamAdapter.ItemTeamClickListener {
 
@@ -68,11 +65,11 @@ class PokemonTeamActivity : AppCompatActivity(), PokemonTeamAdapter.ItemTeamClic
         }
     }
 
-    override fun onDeletePokemon(pokemon: PokemonEntity) {
+    override fun onDeletePokemon(item: PokemonEntity) {
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.dialog_delete_title)
             .setPositiveButton(R.string.dialog_delete_confirm, { dialogInterface, i ->
-                pokemonTeamViewModel.getListAfterDeletingPokemon(pokemon)
+                pokemonTeamViewModel.getListAfterDeletingPokemon(item)
 
                 pokemonTeamViewModel.pokemonTeam.observe(this, {currentList ->
                     teamList = currentList
@@ -83,7 +80,7 @@ class PokemonTeamActivity : AppCompatActivity(), PokemonTeamAdapter.ItemTeamClic
             .setNegativeButton(R.string.dialog_delete_cancel, null)
             .show()
         
-        if (pokemon.name == binding.tvNameTeamDetail.text) {
+        if (item.name == binding.tvNameTeamDetail.text) {
             binding.teamDetail.visibility = View.GONE
         }
     }

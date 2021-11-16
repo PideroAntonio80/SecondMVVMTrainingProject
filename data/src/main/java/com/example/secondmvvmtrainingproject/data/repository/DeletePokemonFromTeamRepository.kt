@@ -9,6 +9,7 @@ import kotlinx.coroutines.withContext
 class DeletePokemonFromTeamRepository : IDeletePokemonFromTeamRepository {
     override suspend fun deletePokemonFromTeamRepository(pokemon: PokemonEntity): ArrayList<PokemonEntity>? {
         return withContext(Dispatchers.IO) {
+
             PokemonApplication.database.pokemonDao().deletePokemonFromTeam(pokemon)
             val pokemonsTeam = PokemonApplication.database.pokemonDao()
                 .getPokemonTeam() as ArrayList<PokemonEntity>

@@ -1,31 +1,15 @@
 package com.example.secondmvvmtrainingproject.data.local.mapper
 
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntity
-import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntityD
 
-fun pokemonMapperToEntityD(pokemonList: ArrayList<PokemonEntity>) : ArrayList<PokemonEntityD> {
+fun pokemonMapperToEntity(pokemonDataModel: PokemonDataModel) : PokemonEntity {
 
-    lateinit var pokemonTeamDList : ArrayList<PokemonEntityD>
-
-    for (pokemon in pokemonList) {
-
-        val pokemonTeamD = PokemonEntityD(id = pokemon.id,
-            name = pokemon.name ?: "",
-            img = pokemon.img ?: "",
-            weight = pokemon.weight ?: "",
-            height = pokemon.height ?: "",
-            type = pokemon.type ?: "")
-
-        pokemonTeamDList.add(pokemonTeamD)
-    }
-    return pokemonTeamDList
-}
-
-fun pokemonToPokemonD(pokemon: PokemonEntity) : PokemonEntityD {
-    return PokemonEntityD(id = pokemon.id,
-        name = pokemon.name ?: "",
-        img = pokemon.img ?: "",
-        weight = pokemon.weight ?: "",
-        height = pokemon.height ?: "",
-        type = pokemon.type ?: "")
+    return PokemonEntity(id = pokemonDataModel.id,
+        name = pokemonDataModel.name ?: "",
+        img = pokemonDataModel.img ?: "",
+        weight = pokemonDataModel.weight ?: "",
+        height = pokemonDataModel.height ?: "",
+        type = pokemonDataModel.type!![0]
+    )
 }

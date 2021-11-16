@@ -3,9 +3,12 @@ package com.example.secondmvvmtrainingproject.presentation.pokemonteam.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.secondmvvmtrainingproject.data.repository.AddPokemonTeamRepository
 import com.example.secondmvvmtrainingproject.data.repository.DeletePokemonFromTeamRepository
 import com.example.secondmvvmtrainingproject.data.repository.PokemonTeamRepository
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntity
+import com.example.secondmvvmtrainingproject.domain.usecase.pokemons.AddPokemonToTeam
 import com.example.secondmvvmtrainingproject.domain.usecase.pokemons.DeletePokemonFromTeam
 import com.example.secondmvvmtrainingproject.domain.usecase.pokemons.GetPokemonsTeam
 import kotlinx.coroutines.launch
@@ -13,52 +16,38 @@ import kotlinx.coroutines.launch
 class PokemonTeamViewModel : ViewModel() {
 
     val pokemonTeam = MutableLiveData<ArrayList<PokemonEntity>?>()
+    var message = MutableLiveData<String>()
 
     private val pokemonTeamRepository = PokemonTeamRepository()
-    private val deletedPokemonFromTeamRepository = DeletePokemonFromTeamRepository()
 
-    private lateinit var myTeam: ArrayList<PokemonEntity>
-    private lateinit var myTeamAfterDeleting: ArrayList<PokemonEntity>
+    private val addPokemontoTeamRepository = AddPokemonTeamRepository()
+    private var addPokemonToTeam = AddPokemonToTeam(addPokemontoTeamRepository)
+
+    private val deletedPokemonFromTeamRepository = DeletePokemonFromTeamRepository()
 
     fun onCreate() {
         viewModelScope.launch {
-            getPokemonsTeam()
-            val result = myTeam
-            if(!result.isNullOrEmpty()) {
-                pokemonTeam.postValue(result)
+            val myTeam = GetPokemonsTeam(pokemonTeamRepository).getTeam() ?: ArrayList()
+            if(!myTeam.isNullOrEmpty()) {
+                pokemonTeam.postValue(myTeam)
             }
         }
     }
 
-    private suspend fun getPokemonsTeam() : ArrayList<PokemonEntity> {
-        myTeam = GetPokemonsTeam(pokemonTeamRepository).getTeam()!!
-        return myTeam
-    }
-
-    suspend fun deletePokemon(pokemon: PokemonEntity) : ArrayList<PokemonEntity> {
-        myTeamAfterDeleting = DeletePokemonFromTeam(deletedPokemonFromTeamRepository).getTeamAfterDeleting(pokemon)!!
-        return myTeamAfterDeleting
+    fun getListAfterAddingPokemon(pokemon: PokemonDataModel) {
+        viewModelScope.launch {
+            val response = addPokemonToTeam.addPokemon(pokemon)
+            val myTeamAfterAdding = response?.teamList ?: ArrayList()
+            val myMessageAfterAdding = response?.message ?: ""
+            pokemonTeam.postValue(myTeamAfterAdding)
+            message.postValue(myMessageAfterAdding)
+        }
     }
 
     fun getListAfterDeletingPokemon(pokemon: PokemonEntity) {
         viewModelScope.launch {
-            deletePokemon(pokemon)
-            val result = myTeamAfterDeleting
-            if(!result.isNullOrEmpty()) {
-                pokemonTeam.postValue(result)
-            }
+            val myTeamAfterDeleting = DeletePokemonFromTeam(deletedPokemonFromTeamRepository).getTeamAfterDeleting(pokemon) ?: ArrayList()
+            pokemonTeam.postValue(myTeamAfterDeleting)
         }
     }
 }
-
-/* fun addPokemon(pokemon: PokemonEntity) {
-        if (!pokemons.contains(pokemon)) {
-            pokemons.add(pokemon)
-        }
-    }
--------------------------------------------
-Para el delete:
-    val index = myTeam.indexOf(pokemon)
-        if (index != -1) {
-            myTeam.removeAt(index)
-        } */

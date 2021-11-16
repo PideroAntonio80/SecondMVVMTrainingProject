@@ -32,5 +32,5 @@ class PokemonTeamRepository: IPokemonTeamRepository {
 //            uiThread {
 //                pokemons = myPokemons // TODO -> EL PROBLEMA ES QUE AL SALIR DEL HILO SECUNDARIO, "myPokemons" NO LE PASA SU VALOR A "pokemons"
 //            }                         // TODO -> POR LO QUE "myPokemons" = lista de pokemons Y "pokemons" = null
-//        }                             // TODO -> ¿¿¿¿¿¿¿ CÓMO REMEDIAR ESTO?????????
+//        }                             // TODO -> ¿¿¿¿¿¿¿ CÓMO REMEDIAR ESTO????????? ---> USANDO CORRUTINAS
 //    }
