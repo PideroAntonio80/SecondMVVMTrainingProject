@@ -10,16 +10,14 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.example.secondmvvmtrainingproject.R
-import com.example.secondmvvmtrainingproject.data.local.PokemonApplication
-import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntity
 import com.example.secondmvvmtrainingproject.databinding.FragmentSearchingBinding
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonDataModel
 import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity
+import com.example.secondmvvmtrainingproject.presentation.pokemonteam.viewmodel.PokemonTeamViewModel
 import com.google.android.material.snackbar.Snackbar
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 private const val EXTRA_SEARCH_LIST = "param1"
 
@@ -30,11 +28,16 @@ class SearchingFragment : Fragment(), SearchView.OnQueryTextListener {
     private lateinit var pokemonSearchlist: ArrayList<PokemonDataModel>
     private var pokemon: PokemonDataModel? = null
 
+    private val pokemonTeamViewModel: PokemonTeamViewModel by viewModels()
+
+    private var myMessage: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             pokemonSearchlist = it.getParcelableArrayList<PokemonDataModel>(EXTRA_SEARCH_LIST) as ArrayList<PokemonDataModel>
         }
+        pokemonTeamViewModel.onCreate()
     }
 
     override fun onCreateView(
@@ -59,32 +62,16 @@ class SearchingFragment : Fragment(), SearchView.OnQueryTextListener {
                 tvHeightSearchedFill.text = myPokemonSearched.height
                 tvTypeSearchedFill.text = myPokemonSearched.type?.get(0)
             }
+        }
+        binding.fabAddFav.setOnClickListener {
 
-            fabAddFav.setOnClickListener {
-                val pokemonEntity = myPokemonSearched?.let { pokemon ->
-                    PokemonEntity(
-                        id = pokemon.id,
-                        name = pokemon.name,
-                        img = pokemon.img,
-                        weight = pokemon.weight,
-                        height = pokemon.height,
-                        type = pokemon.type?.get(0).toString()
-                    )
-                }
-                doAsync {
-                    if (PokemonApplication.database.pokemonDao().getPokemonTeam().size >= 3) {
-                        uiThread {
-                            makeSnack(getString(R.string.full_team))
-                        }
-                    } else {
-                        PokemonApplication.database.pokemonDao().addPokemonToTeam(pokemonEntity!!)
+            pokemonTeamViewModel.getListAfterAddingPokemon(myPokemonSearched!!)
 
-                        uiThread {
-                            makeSnack(getString(R.string.fab_pokemon_added))
-                        }
-                    }
-                }
-            }
+            pokemonTeamViewModel.message.observe(this.viewLifecycleOwner, { currentMessage ->
+                myMessage = currentMessage
+
+                makeSnack(myMessage)
+            })
         }
     }
 
