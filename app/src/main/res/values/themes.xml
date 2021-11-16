@@ -18,7 +18,13 @@
     </style>
     
     <style name="bnbNavigator">
-        <item name="android:background">@color/light_blue_900</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="itemIconTint">@color/white</item>
+        <item name="itemTextColor">@color/white</item>
+    </style>
+
+    <style name="ivSearch">
+        <item name="android:background">@color/light_blue_900_light</item>
         <item name="itemIconTint">@color/white</item>
         <item name="itemTextColor">@color/white</item>
     </style>

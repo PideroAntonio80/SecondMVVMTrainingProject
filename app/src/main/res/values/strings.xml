@@ -39,4 +39,11 @@
     <string name="dialog_delete_confirm">Eliminar</string>
     <string name="dialog_delete_cancel">Cancelar</string>
     <string name="full_team">Tu equipo está completo</string>
+    <string name="hint_full_name">Nombre Completo</string>
+    <string name="hint_photo_url">URL Foto perfil</string>
+    <string name="profile_update">Actualizar</string>
+    <string name="profile_title">Perfil de usuario</string>
+    <string name="user_updated">Usuario actualizado</string>
+    <string name="user_updating_error">Error en la actualización del usuario</string>
+    <string name="menu_item_edit_user">Edit User Profile</string>
 </resources>

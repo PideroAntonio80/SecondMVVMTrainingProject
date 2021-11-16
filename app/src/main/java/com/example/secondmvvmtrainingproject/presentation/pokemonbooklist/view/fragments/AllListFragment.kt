@@ -2,6 +2,7 @@ package com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -65,6 +66,4 @@ class AllListFragment : Fragment(), PokemonAdapter.ItemClickListener {
     }
 }
 
-// TODO 1- equals & hashCode en la clase PokemonDataModel
-// TODO 2- Volver hacia atrás
-// TODO 3- fragmentManager deprecated (línea 63)
+

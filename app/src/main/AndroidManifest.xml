@@ -14,13 +14,16 @@
         android:theme="@style/Theme.SecondMVVMTrainingProject"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity"
+            android:name=".presentation.pokemongame.view.PokemonGameActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.PokemonBookActivity"
+            android:name=".presentation.pokemonteam.view.PokemonTeamActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.secondmvvmtrainingproject.presentation.main.MainActivity"
+            android:name=".presentation.pokemonbooklist.view.PokemonBookActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

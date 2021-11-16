@@ -13,7 +13,7 @@
     android:foreground="?attr/selectableItemBackgroundBorderless"
     android:gravity="bottom"
     android:padding="@dimen/common_padding_default"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:backgroundTint="@color/light_blue_900_dark">
 
     <ImageView
         android:id="@+id/nav_header_imageView"
@@ -27,6 +27,10 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/common_padding_default"
         android:text="@string/nav_header_title_text"
+        android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
 </LinearLayout>
+
+
+    <!--android:theme="@style/ThemeOverlay.AppCompat.Dark"-->

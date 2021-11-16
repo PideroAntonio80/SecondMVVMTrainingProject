@@ -20,7 +20,11 @@
             android:title="@string/menu_item_player_records"
             android:icon="@drawable/ic_storage"/>
         <item
-            android:id="@+id/profile"
+            android:id="@+id/action_profile"
+            android:title="@string/menu_item_edit_user"
+            android:icon="@drawable/ic_account_circle"/>
+        <item
+            android:id="@+id/close_session"
             android:title="@string/menu_item_close_session"
             android:icon="@drawable/ic_logout"/>
         <item

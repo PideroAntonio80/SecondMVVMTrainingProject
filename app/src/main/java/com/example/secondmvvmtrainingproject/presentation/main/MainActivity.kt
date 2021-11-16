@@ -19,6 +19,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.ActivityMainBinding
+import com.example.secondmvvmtrainingproject.presentation.main.fragment.ProfileFragment
+import com.example.secondmvvmtrainingproject.presentation.main.utils.MainAux
 import com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.PokemonBookActivity
 import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity
 import com.firebase.ui.auth.AuthUI
@@ -27,9 +29,10 @@ import com.firebase.ui.auth.IdpResponse
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import java.security.MessageDigest
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, MainAux {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -75,13 +78,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         configAuth()
 
         initViews()
+
     }
 
     private fun configAuth() {
         firebaseAuth = FirebaseAuth.getInstance()
         authStateListener = FirebaseAuth.AuthStateListener { auth ->
             if (auth.currentUser != null) {
-                supportActionBar?.title = auth.currentUser?.displayName
+                //supportActionBar?.title = auth.currentUser?.displayName
+                updateTitle(auth.currentUser!!)
 
                 progress.visibility = View.GONE
                 topBar.visibility = View.VISIBLE
@@ -157,6 +162,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.setHomeButtonEnabled(true)
 
         binding.nvNavigationView.setNavigationItemSelectedListener(this)
+
+        //actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -165,7 +172,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.my_team -> startActivity(Intent(this, PokemonTeamActivity::class.java))
             R.id.play_game -> Toast.makeText(this, "play_game", Toast.LENGTH_SHORT).show()
             R.id.my_records -> Toast.makeText(this, "my_records", Toast.LENGTH_SHORT).show()
-            R.id.profile -> AuthUI.getInstance().signOut(this)
+            R.id.action_profile -> {
+                val fragment = ProfileFragment()
+                supportFragmentManager.beginTransaction().add(R.id.dlDrawerLayout, fragment).addToBackStack(null).commit()
+            }
+            R.id.close_session -> AuthUI.getInstance().signOut(this)
                 .addOnSuccessListener {
                     Toast.makeText(this, R.string.finish_session, Toast.LENGTH_SHORT).show()
                 }
@@ -201,4 +212,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         return super.onOptionsItemSelected(item)
     }
+
+    override fun updateTitle(user: FirebaseUser) {
+        supportActionBar?.title = user.displayName
+    }
 }
+
+// TODO Subir el proyecto a GitHub de Ntt Data ---> https://umane.everis.com/git/MFPHONEGAP/pokemonbattlecard.git
