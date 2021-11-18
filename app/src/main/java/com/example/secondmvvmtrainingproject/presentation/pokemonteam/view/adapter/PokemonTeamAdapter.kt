@@ -27,28 +27,6 @@ class PokemonTeamAdapter(private var pokemons: ArrayList<PokemonEntity>,
 
     override fun getItemCount(): Int = pokemons.size
 
-    /*fun setPokemons(pokemons: MutableList<PokemonEntity>) {
-        this.pokemons = pokemons
-        notifyDataSetChanged()
-    }
-
-    fun addPokemon(pokemon: PokemonEntity) {
-        if (!pokemons.contains(pokemon)) {
-            pokemons.add(pokemon)
-            notifyItemInserted(pokemons.size - 1)
-        } else {
-            Toast.makeText(context, R.string.repeated_pokemon, Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    fun deletePokemon(pokemon: PokemonEntity) {
-        val index = pokemons.indexOf(pokemon)
-        if (index != -1) {
-            pokemons.removeAt(index)
-            notifyItemRemoved(index)
-        }
-    }*/
-
     inner class ViewHolder(view : View): RecyclerView.ViewHolder(view) {
         private val binding = PokemonRowTeamBinding.bind(view)
 

@@ -7,7 +7,271 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/common_padding_default"
+    android:background="@color/black"
 
     tools:context=".presentation.pokemongame.view.PokemonGameActivity">
+
+    <ImageButton
+        android:id="@+id/ibMyPok1"
+        android:layout_width="@dimen/pokemon_game_image_size"
+        android:layout_height="@dimen/pokemon_game_image_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/ib_my_team_first_pokemon" />
+
+    <ImageButton
+        android:id="@+id/ibMyPok2"
+        android:layout_width="@dimen/pokemon_game_image_size"
+        android:layout_height="@dimen/pokemon_game_image_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ibMyPok1"
+        android:contentDescription="@string/ib_my_team_second_pokemon"/>
+
+    <ImageButton
+        android:id="@+id/ibMyPok3"
+        android:layout_width="@dimen/pokemon_game_image_size"
+        android:layout_height="@dimen/pokemon_game_image_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ibMyPok2"
+        android:contentDescription="@string/ib_my_team_third_pokemon"/>
+
+    <ImageButton
+        android:id="@+id/ibMyPok4"
+        android:layout_width="@dimen/pokemon_game_image_size"
+        android:layout_height="@dimen/pokemon_game_image_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_question_mark"
+        android:contentDescription="@string/ib_enemy_first_pokemon" />
+
+    <ImageButton
+        android:id="@+id/ibMyPok5"
+        android:layout_width="@dimen/pokemon_game_image_size"
+        android:layout_height="@dimen/pokemon_game_image_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ibMyPok4"
+        android:src="@drawable/ic_question_mark"
+        android:contentDescription="@string/ib_enemy_second_pokemon"/>
+
+    <ImageButton
+        android:id="@+id/ibMyPok6"
+        android:layout_width="@dimen/pokemon_game_image_size"
+        android:layout_height="@dimen/pokemon_game_image_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ibMyPok5"
+        android:src="@drawable/ic_question_mark"
+        android:contentDescription="@string/ib_enemy_third_pokemon"/>
+
+    <ImageView
+        android:id="@+id/ivWin1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok1"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok1"
+        app:layout_constraintStart_toEndOf="@id/ibMyPok1"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:src="@drawable/ic_done"
+        android:contentDescription="@string/winning_icon_description"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/ivWin2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok2"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok2"
+        app:layout_constraintStart_toEndOf="@id/ibMyPok2"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:src="@drawable/ic_done"
+        android:contentDescription="@string/winning_icon_description"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ivWin3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok3"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok3"
+        app:layout_constraintStart_toEndOf="@id/ibMyPok3"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:src="@drawable/ic_done"
+        android:contentDescription="@string/winning_icon_description"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/ivWin4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok4"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok4"
+        app:layout_constraintEnd_toStartOf="@id/ibMyPok4"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:src="@drawable/ic_done"
+        android:contentDescription="@string/winning_icon_description"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ivWin5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok5"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok5"
+        app:layout_constraintEnd_toStartOf="@id/ibMyPok5"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:src="@drawable/ic_done"
+        android:contentDescription="@string/winning_icon_description"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/ivWin6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok6"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok6"
+        app:layout_constraintEnd_toStartOf="@id/ibMyPok6"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:src="@drawable/ic_done"
+        android:contentDescription="@string/winning_icon_description"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ivLose1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok1"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok1"
+        app:layout_constraintStart_toEndOf="@id/ibMyPok1"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/lost_icon_description"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/ivLose2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok2"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok2"
+        app:layout_constraintStart_toEndOf="@id/ibMyPok2"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/lost_icon_description"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/ivLose3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok3"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok3"
+        app:layout_constraintStart_toEndOf="@id/ibMyPok3"
+        android:layout_marginStart="@dimen/common_padding_min"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/lost_icon_description"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ivLose4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok4"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok4"
+        app:layout_constraintEnd_toStartOf="@id/ibMyPok4"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/lost_icon_description"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/ivLose5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok5"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok5"
+        app:layout_constraintEnd_toStartOf="@id/ibMyPok5"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/lost_icon_description"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ivLose6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ibMyPok6"
+        app:layout_constraintBottom_toBottomOf="@id/ibMyPok6"
+        app:layout_constraintEnd_toStartOf="@id/ibMyPok6"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/lost_icon_description"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbFight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ibMyPok3"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_marginTop="@dimen/common_padding_default"
+        android:fontFamily="@font/bangers"
+        android:text="@string/mb_fight_text"
+        android:textColor="@color/yellow_a400"
+        android:textSize="@dimen/common_main_title"
+        app:icon="@drawable/ic_play_arrow"
+        app:iconTint="@color/yellow_a400"/>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mbFight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/common_padding_default"
+        android:textSize="@dimen/battle_result_text_size"
+        android:fontFamily="@font/bungee_shade"
+        android:textColor="@color/green"
+        tools:text="YOU WIN"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_padding_default"
+        android:text="@string/mb_restart_text"
+        android:textColor="@color/white"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/mbSecretRoom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbSecretRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_padding_default"
+        android:fontFamily="@font/bangers"
+        android:text="@string/mb_secret_room_text"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/white"
+        android:backgroundTint="@color/red"
+        app:icon="@drawable/ic_lock"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

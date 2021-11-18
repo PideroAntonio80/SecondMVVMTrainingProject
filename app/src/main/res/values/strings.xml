@@ -46,4 +46,16 @@
     <string name="user_updated">Usuario actualizado</string>
     <string name="user_updating_error">Error en la actualización del usuario</string>
     <string name="menu_item_edit_user">Edit User Profile</string>
+    <string name="ib_my_team_first_pokemon">Primer pokemon de mi equipo</string>
+    <string name="ib_my_team_second_pokemon">Segundo pokemon de mi equipo</string>
+    <string name="ib_my_team_third_pokemon">Tercer pokemon de mi equipo</string>
+    <string name="ib_enemy_first_pokemon">Primer pokemon de mi enemigo</string>
+    <string name="ib_enemy_second_pokemon">Segundo pokemon de mi enemigo</string>
+    <string name="ib_enemy_third_pokemon">Tercer pokemon de mi enemigo</string>
+    <string name="mb_fight_text">Fight!</string>
+    <string name="winning_icon_description">Icono de ganar</string>
+    <string name="lost_icon_description">losing_icon_description</string>
+    <string name="mb_secret_room_text">Secret Room</string>
+    <string name="mb_restart_text">Restart</string>
+    <string name="game_team_min_players">Debes tener tres Pokemons en tu equipo</string>
 </resources>

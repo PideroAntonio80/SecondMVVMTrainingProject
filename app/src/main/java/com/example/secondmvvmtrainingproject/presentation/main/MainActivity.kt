@@ -22,6 +22,7 @@ import com.example.secondmvvmtrainingproject.databinding.ActivityMainBinding
 import com.example.secondmvvmtrainingproject.presentation.main.fragment.ProfileFragment
 import com.example.secondmvvmtrainingproject.presentation.main.utils.MainAux
 import com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.PokemonBookActivity
+import com.example.secondmvvmtrainingproject.presentation.pokemongame.view.PokemonGameActivity
 import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
@@ -170,7 +171,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when(item.itemId) {
             R.id.pokemon_book -> startActivity(Intent(this, PokemonBookActivity::class.java))
             R.id.my_team -> startActivity(Intent(this, PokemonTeamActivity::class.java))
-            R.id.play_game -> Toast.makeText(this, "play_game", Toast.LENGTH_SHORT).show()
+            R.id.play_game -> startActivity(Intent(this, PokemonGameActivity::class.java))
             R.id.my_records -> Toast.makeText(this, "my_records", Toast.LENGTH_SHORT).show()
             R.id.action_profile -> {
                 val fragment = ProfileFragment()
@@ -217,5 +218,3 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.title = user.displayName
     }
 }
-
-// TODO Subir el proyecto a GitHub de Ntt Data ---> https://umane.everis.com/git/MFPHONEGAP/pokemonbattlecard.git
