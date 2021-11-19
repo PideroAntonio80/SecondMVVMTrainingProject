@@ -9,5 +9,4 @@ class PokemonEntity(@PrimaryKey(autoGenerate = false) val id: Int,
                     val img: String,
                     val weight: String,
                     val height: String,
-                    val type: String) {
-}
+                    val type: String)

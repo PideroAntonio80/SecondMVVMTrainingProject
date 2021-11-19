@@ -1,8 +1,8 @@
 package com.example.secondmvvmtrainingproject.domain.repository
 
-import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntity
+import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntityGame
 
 interface IPokemonGameRepository {
-    suspend fun getPokemonsTeam(): ArrayList<PokemonEntity>?
-    suspend fun getPokemonsEnemyTeam(): ArrayList<PokemonEntity>?
+    suspend fun getPokemonsTeam(): ArrayList<PokemonEntityGame>?
+    suspend fun getPokemonsEnemyTeam(): ArrayList<PokemonEntityGame>?
 }

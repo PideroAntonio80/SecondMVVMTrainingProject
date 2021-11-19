@@ -10,6 +10,6 @@
     <dimen name="common_padding_extra_min">4dp</dimen>
     <dimen name="login_width_button">160dp</dimen>
     <dimen name="profile_width_textfield">260dp</dimen>
-    <dimen name="pokemon_game_image_size">95dp</dimen>
+    <dimen name="pokemon_game_image_size">100dp</dimen>
     <dimen name="battle_result_text_size">40sp</dimen>
 </resources>

@@ -58,4 +58,7 @@
     <string name="mb_secret_room_text">Secret Room</string>
     <string name="mb_restart_text">Restart</string>
     <string name="game_team_min_players">Debes tener tres Pokemons en tu equipo</string>
+    <string name="winning_battle_result">YOU WIN</string>
+    <string name="losing_battle_result">YOU LOSE</string>
+    <string name="winning_result_battle">YOU WIN</string>
 </resources>
