@@ -19,6 +19,7 @@ class PokemonGameActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPokemonGameBinding
 
+    val hola = "hola"
     private val pokemonGameViewModel: PokemonGameViewModel by viewModels()
 
     private var gameTeam: ArrayList<PokemonEntityGame>? = null
