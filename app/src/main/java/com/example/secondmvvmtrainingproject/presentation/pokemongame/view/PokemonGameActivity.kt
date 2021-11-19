@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.ActivityPokemonGameBinding
@@ -19,7 +20,6 @@ class PokemonGameActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPokemonGameBinding
 
-    val hola = "hola"
     private val pokemonGameViewModel: PokemonGameViewModel by viewModels()
 
     private var gameTeam: ArrayList<PokemonEntityGame>? = null
@@ -118,25 +118,17 @@ class PokemonGameActivity : AppCompatActivity() {
         gameAlgorithm(myPok3!!, enemy3!!)
 
         with(binding) {
+
+            animationView.visibility = View.VISIBLE
+            animationView.playAnimation()
+            //Thread.sleep(2000)
+            //animationView.visibility = View.GONE
+
             if (myPok1.victory) {
                 ivWin1.visibility = View.VISIBLE
                 myVictories++
             } else {
                 ivLose1.visibility = View.VISIBLE
-            }
-
-            if (myPok2.victory) {
-                ivWin2.visibility = View.VISIBLE
-                myVictories++
-            } else {
-                ivLose2.visibility = View.VISIBLE
-            }
-
-            if (myPok3.victory) {
-                ivWin3.visibility = View.VISIBLE
-                myVictories++
-            } else {
-                ivLose3.visibility = View.VISIBLE
             }
 
             if (enemy1.victory) {
@@ -145,10 +137,34 @@ class PokemonGameActivity : AppCompatActivity() {
                 ivLose4.visibility = View.VISIBLE
             }
 
+            animationView2.visibility = View.VISIBLE
+            animationView2.playAnimation()
+            //Thread.sleep(2000)
+            //animationView2.visibility = View.GONE
+
+            if (myPok2.victory) {
+                ivWin2.visibility = View.VISIBLE
+                myVictories++
+            } else {
+                ivLose2.visibility = View.VISIBLE
+            }
+
             if (enemy2.victory) {
                 ivWin5.visibility = View.VISIBLE
             } else {
                 ivLose5.visibility = View.VISIBLE
+            }
+
+            animationView3.visibility = View.VISIBLE
+            animationView3.playAnimation()
+            //Thread.sleep(2000)
+            //animationView3.visibility = View.GONE
+
+            if (myPok3.victory) {
+                ivWin3.visibility = View.VISIBLE
+                myVictories++
+            } else {
+                ivLose3.visibility = View.VISIBLE
             }
 
             if (enemy3.victory) {
@@ -167,5 +183,12 @@ class PokemonGameActivity : AppCompatActivity() {
                 tvResultLose.visibility = View.VISIBLE
             }
         }
+    }
+
+    private fun setAnimation(animation: LottieAnimationView) {
+        animation.visibility = View.VISIBLE
+        animation.playAnimation()
+        Thread.sleep(2000)
+        animation.visibility = View.GONE
     }
 }

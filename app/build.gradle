@@ -100,6 +100,9 @@ dependencies {
     // Find the latest Facebook SDK releases here: https://github.com/facebook/facebook-android-sdk/blob/master/CHANGELOG.md
     implementation 'com.facebook.android:facebook-login:8.1.0'
 
+    // Lottie (Animaciones)
+    implementation 'com.airbnb.android:lottie:4.2.1'
+
     // Provides ARCore Session and related resources.
     implementation 'com.google.ar:core:1.15.0'
     // Provides ArFragment, and other UX resources.

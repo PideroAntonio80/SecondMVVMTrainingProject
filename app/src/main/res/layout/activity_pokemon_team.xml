@@ -20,6 +20,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="@string/my_team_title"
+        android:fontFamily="@font/bungee_shade"
+        android:textColor="@color/light_blue_900_light"
         android:textAlignment="center"
         android:textAppearance="?attr/textAppearanceHeadline4"/>
 
@@ -30,7 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTeamTitle"
-        android:layout_marginTop="@dimen/common_padding_default"
         tools:listitem="@layout/pokemon_row_team"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rvRecyclerTeam"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="@dimen/common_padding_default"
+        android:layout_marginTop="@dimen/common_padding_middle"
         android:visibility="gone"
         tools:visibility="visible">
 
@@ -58,7 +59,7 @@
                 android:id="@+id/tvNameTeamDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="@dimen/common_padding_default"
                 android:layout_marginStart="@dimen/common_padding_default"
                 app:layout_constraintStart_toEndOf="@id/ivPictureTeamDetail"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -70,9 +71,9 @@
                 android:id="@+id/tvWeightTeamDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivPictureTeamDetail"
-                android:layout_marginTop="@dimen/common_padding_default"
+                app:layout_constraintStart_toStartOf="@id/tvNameTeamDetail"
+                app:layout_constraintTop_toBottomOf="@id/tvNameTeamDetail"
+                android:layout_marginTop="@dimen/common_padding_double"
                 android:textAppearance="?attr/textAppearanceSubtitle1"
                 android:textStyle="bold"
                 android:text="@string/fragment_detail_tvWeightDetail_text" />
@@ -91,7 +92,7 @@
                 android:id="@+id/tvHeightDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvWeightTeamDetail"
                 app:layout_constraintTop_toBottomOf="@id/tvWeightTeamDetail"
                 android:layout_marginTop="@dimen/common_padding_default"
                 android:textAppearance="?attr/textAppearanceSubtitle1"
@@ -112,7 +113,7 @@
                 android:id="@+id/tvTypeDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvHeightDetail"
                 app:layout_constraintTop_toBottomOf="@id/tvHeightDetail"
                 android:layout_marginTop="@dimen/common_padding_default"
                 android:textAppearance="?attr/textAppearanceSubtitle1"

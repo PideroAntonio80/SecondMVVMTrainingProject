@@ -3,6 +3,7 @@
     <dimen name="common_padding_default">16dp</dimen>
     <dimen name="common_padding_min">8dp</dimen>
     <dimen name="common_padding_middle">24dp</dimen>
+    <dimen name="common_padding_double">32dp</dimen>
     <dimen name="nav_header_image_size">64dp</dimen>
     <dimen name="common_main_title">25sp</dimen>
     <dimen name="card_elevation">20dp</dimen>
