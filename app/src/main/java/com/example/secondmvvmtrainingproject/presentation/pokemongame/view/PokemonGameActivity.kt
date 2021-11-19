@@ -1,11 +1,11 @@
 package com.example.secondmvvmtrainingproject.presentation.pokemongame.view
 
+import android.animation.Animator
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.ActivityPokemonGameBinding
@@ -43,7 +43,7 @@ class PokemonGameActivity : AppCompatActivity() {
         pokemonGameViewModel.pokemonGameMyTeam.observe(this, { currentMyTeamList ->
             gameTeam = currentMyTeamList
 
-            if (gameTeam?.size!! < 3) {
+            if (gameTeam?.size!! != 3) {  // TODO Si es igual a cero no se hace el snack??????
                 makeSnack(getString(R.string.game_team_min_players))
             } else {
                 setMyTeamGame()
@@ -119,76 +119,118 @@ class PokemonGameActivity : AppCompatActivity() {
 
         with(binding) {
 
+            /***************************************/
             animationView.visibility = View.VISIBLE
+            animationView.repeatCount = 5
             animationView.playAnimation()
-            //Thread.sleep(2000)
-            //animationView.visibility = View.GONE
 
-            if (myPok1.victory) {
-                ivWin1.visibility = View.VISIBLE
-                myVictories++
-            } else {
-                ivLose1.visibility = View.VISIBLE
-            }
+            animationView.addAnimatorListener(object : Animator.AnimatorListener {
+                override fun onAnimationRepeat(animation: Animator?) {
+                    //Do nothing
+                }
 
-            if (enemy1.victory) {
-                ivWin4.visibility = View.VISIBLE
-            } else {
-                ivLose4.visibility = View.VISIBLE
-            }
+                override fun onAnimationEnd(animation: Animator?) {
+                    if (myPok1.victory) {
+                        ivWin1.visibility = View.VISIBLE
+                        myVictories++
+                    } else {
+                        ivLose1.visibility = View.VISIBLE
+                    }
 
-            animationView2.visibility = View.VISIBLE
-            animationView2.playAnimation()
-            //Thread.sleep(2000)
-            //animationView2.visibility = View.GONE
+                    if (enemy1.victory) {
+                        ivWin4.visibility = View.VISIBLE
+                    } else {
+                        ivLose4.visibility = View.VISIBLE
+                    }
 
-            if (myPok2.victory) {
-                ivWin2.visibility = View.VISIBLE
-                myVictories++
-            } else {
-                ivLose2.visibility = View.VISIBLE
-            }
+                    /***************************************/
+                    animationView2.visibility = View.VISIBLE
+                    animationView2.repeatCount = 5
+                    animationView2.playAnimation()
 
-            if (enemy2.victory) {
-                ivWin5.visibility = View.VISIBLE
-            } else {
-                ivLose5.visibility = View.VISIBLE
-            }
+                    animationView2.addAnimatorListener(object : Animator.AnimatorListener {
+                        override fun onAnimationRepeat(animation: Animator?) {
+                            //Do nothing
+                        }
 
-            animationView3.visibility = View.VISIBLE
-            animationView3.playAnimation()
-            //Thread.sleep(2000)
-            //animationView3.visibility = View.GONE
+                        override fun onAnimationEnd(animation: Animator?) {
+                            if (myPok2.victory) {
+                                ivWin2.visibility = View.VISIBLE
+                                myVictories++
+                            } else {
+                                ivLose2.visibility = View.VISIBLE
+                            }
 
-            if (myPok3.victory) {
-                ivWin3.visibility = View.VISIBLE
-                myVictories++
-            } else {
-                ivLose3.visibility = View.VISIBLE
-            }
+                            if (enemy2.victory) {
+                                ivWin5.visibility = View.VISIBLE
+                            } else {
+                                ivLose5.visibility = View.VISIBLE
+                            }
 
-            if (enemy3.victory) {
-                ivWin6.visibility = View.VISIBLE
-            } else {
-                ivLose6.visibility = View.VISIBLE
-            }
+                            /***************************************/
+                            animationView3.visibility = View.VISIBLE
+                            animationView3.repeatCount = 5
+                            animationView3.playAnimation()
 
-            if (myVictories >=2) {
-                tvResultWin.visibility = View.VISIBLE
+                            animationView3.addAnimatorListener(object : Animator.AnimatorListener {
+                                override fun onAnimationRepeat(animation: Animator?) {
+                                    //Do nothing
+                                }
 
-                mbSecretRoom.isEnabled = true
-                mbSecretRoom.setBackgroundColor(resources.getColor(R.color.green))
-                mbSecretRoom.setIconResource(R.drawable.ic_lock_open)
-            } else {
-                tvResultLose.visibility = View.VISIBLE
-            }
+                                override fun onAnimationEnd(animation: Animator?) {
+                                    if (myPok3.victory) {
+                                        ivWin3.visibility = View.VISIBLE
+                                        myVictories++
+                                    } else {
+                                        ivLose3.visibility = View.VISIBLE
+                                    }
+
+                                    if (enemy3.victory) {
+                                        ivWin6.visibility = View.VISIBLE
+                                    } else {
+                                        ivLose6.visibility = View.VISIBLE
+                                    }
+
+                                    /***************************************/
+                                    if (myVictories >=2) {
+                                        tvResultWin.visibility = View.VISIBLE
+
+                                        mbSecretRoom.isEnabled = true
+                                        mbSecretRoom.setBackgroundColor(resources.getColor(R.color.green))
+                                        mbSecretRoom.setIconResource(R.drawable.ic_lock_open)
+                                    } else {
+                                        tvResultLose.visibility = View.VISIBLE
+                                    }
+                                }
+
+                                override fun onAnimationCancel(animation: Animator?) {
+                                    animationView3.visibility = View.GONE
+                                }
+
+                                override fun onAnimationStart(animation: Animator?) {
+                                    //Do nothing
+                                }
+                            })
+                        }
+
+                        override fun onAnimationCancel(animation: Animator?) {
+                            animationView2.visibility = View.GONE
+                        }
+
+                        override fun onAnimationStart(animation: Animator?) {
+                            //Do nothing
+                        }
+                    })
+                }
+
+                override fun onAnimationCancel(animation: Animator?) {
+                    animationView.visibility = View.GONE
+                }
+
+                override fun onAnimationStart(animation: Animator?) {
+                    //Do nothing
+                }
+            })
         }
-    }
-
-    private fun setAnimation(animation: LottieAnimationView) {
-        animation.visibility = View.VISIBLE
-        animation.playAnimation()
-        Thread.sleep(2000)
-        animation.visibility = View.GONE
     }
 }
