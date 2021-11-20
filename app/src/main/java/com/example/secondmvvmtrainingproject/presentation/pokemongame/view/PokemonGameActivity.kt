@@ -2,6 +2,7 @@ package com.example.secondmvvmtrainingproject.presentation.pokemongame.view
 
 import android.animation.Animator
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -24,6 +25,8 @@ class PokemonGameActivity : AppCompatActivity() {
 
     private var gameTeam: ArrayList<PokemonEntityGame>? = null
     private var gameEnemyTeam: ArrayList<PokemonEntityGame>? = null
+
+    private var mediaPlayer: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +53,14 @@ class PokemonGameActivity : AppCompatActivity() {
                 setListeners()
             }
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mediaPlayer = MediaPlayer.create(this, R.raw.pksound)
+//        mediaPlayer?.start()
+//        mediaPlayer?.stop()
+//        mediaPlayer?.release()
     }
 
     private fun setMyTeamGame() {
@@ -80,6 +91,7 @@ class PokemonGameActivity : AppCompatActivity() {
         binding.mbFight.setOnClickListener {
             setEnemyTeamGame()
             battleStart()
+            mediaPlayer?.start()
         }
         binding.mbRestart.setOnClickListener {
             finish()
@@ -121,7 +133,7 @@ class PokemonGameActivity : AppCompatActivity() {
 
             /***************************************/
             animationView.visibility = View.VISIBLE
-            animationView.repeatCount = 5
+            animationView.repeatCount = 2
             animationView.playAnimation()
 
             animationView.addAnimatorListener(object : Animator.AnimatorListener {
@@ -145,7 +157,7 @@ class PokemonGameActivity : AppCompatActivity() {
 
                     /***************************************/
                     animationView2.visibility = View.VISIBLE
-                    animationView2.repeatCount = 5
+                    animationView2.repeatCount = 2
                     animationView2.playAnimation()
 
                     animationView2.addAnimatorListener(object : Animator.AnimatorListener {
@@ -169,7 +181,7 @@ class PokemonGameActivity : AppCompatActivity() {
 
                             /***************************************/
                             animationView3.visibility = View.VISIBLE
-                            animationView3.repeatCount = 5
+                            animationView3.repeatCount = 2
                             animationView3.playAnimation()
 
                             animationView3.addAnimatorListener(object : Animator.AnimatorListener {
@@ -191,15 +203,39 @@ class PokemonGameActivity : AppCompatActivity() {
                                         ivLose6.visibility = View.VISIBLE
                                     }
 
+                                    mediaPlayer?.stop()
+                                    mediaPlayer?.release()
+                                    mediaPlayer = null
+
                                     /***************************************/
                                     if (myVictories >=2) {
                                         tvResultWin.visibility = View.VISIBLE
+                                        tvResultWin.animate().apply {
+                                            mediaPlayer = MediaPlayer.create(this@PokemonGameActivity, R.raw.pksound)
+                                            mediaPlayer?.start()
+                                            duration = 3000
+                                            rotationYBy(360f)
+                                        }.withEndAction {
+                                            mediaPlayer?.stop()
+                                            mediaPlayer?.release()
+                                            mediaPlayer = null
+                                        }
 
                                         mbSecretRoom.isEnabled = true
                                         mbSecretRoom.setBackgroundColor(resources.getColor(R.color.green))
                                         mbSecretRoom.setIconResource(R.drawable.ic_lock_open)
                                     } else {
                                         tvResultLose.visibility = View.VISIBLE
+                                        tvResultLose.animate().apply {
+                                            mediaPlayer = MediaPlayer.create(this@PokemonGameActivity, R.raw.pksound)
+                                            mediaPlayer?.start()
+                                            duration = 3000
+                                            rotationYBy(360f)
+                                        }.withEndAction {
+                                            mediaPlayer?.stop()
+                                            mediaPlayer?.release()
+                                            mediaPlayer = null
+                                        }
                                     }
                                 }
 
