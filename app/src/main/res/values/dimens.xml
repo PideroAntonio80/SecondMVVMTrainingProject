@@ -13,4 +13,5 @@
     <dimen name="profile_width_textfield">260dp</dimen>
     <dimen name="pokemon_game_image_size">100dp</dimen>
     <dimen name="battle_result_text_size">40sp</dimen>
+    <dimen name="pikachu_anim_size">230dp</dimen>
 </resources>

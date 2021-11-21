@@ -11,8 +11,6 @@ import androidx.fragment.app.Fragment
 import com.example.secondmvvmtrainingproject.databinding.FragmentOptionsBinding
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.BABY_ELEPHANT
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.COW
-import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.PIKACHU
-import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.VOLTORB
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.view.SecretRoomARActivity
 
 class OptionsFragment : Fragment() {
@@ -49,8 +47,8 @@ class OptionsFragment : Fragment() {
                 when {
                     binding.rbBabyElephant.isChecked -> option = BABY_ELEPHANT
                     binding.rbCow.isChecked -> option = COW
-                    binding.rbPikachu.isChecked -> option = PIKACHU
-                    binding.rbPokemonBall.isChecked -> option = VOLTORB
+                    binding.rbPikachu.isChecked -> option = BABY_ELEPHANT
+                    binding.rbPokemonBall.isChecked -> option = COW
                     binding.rbOtro.isChecked -> option = BABY_ELEPHANT
                     binding.rbOtroMas.isChecked -> option = COW
                 }
