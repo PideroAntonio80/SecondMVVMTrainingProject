@@ -17,6 +17,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -31,9 +34,20 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        useIR = true
     }
     buildFeatures {
         viewBinding true
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerVersion '1.5.21'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
     }
 }
 
@@ -80,6 +94,14 @@ dependencies {
     // Room
     implementation 'androidx.room:room-ktx:2.3.0'
     implementation "androidx.room:room-runtime:2.3.0"
+    // Compose
+    implementation "androidx.compose.ui:ui:1.0.5"
+    implementation "androidx.compose.material:material:1.0.5"
+    implementation "androidx.compose.ui:ui-tooling-preview:1.0.5"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+    implementation 'androidx.activity:activity-compose:1.4.0'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.0.5"
+    debugImplementation "androidx.compose.ui:ui-tooling:1.0.5"
     kapt("androidx.room:room-compiler:$room_version")
     // Anko Commons
     implementation "org.jetbrains.anko:anko-commons:$anko_version"

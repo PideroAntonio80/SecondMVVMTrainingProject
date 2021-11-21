@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.presentation.main
+package com.example.secondmvvmtrainingproject.presentation.main.view
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -19,7 +19,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.ActivityMainBinding
-import com.example.secondmvvmtrainingproject.presentation.main.fragment.ProfileFragment
+import com.example.secondmvvmtrainingproject.presentation.gameinfo.GameInfoActivity
+import com.example.secondmvvmtrainingproject.presentation.main.view.fragment.ProfileFragment
 import com.example.secondmvvmtrainingproject.presentation.main.utils.MainAux
 import com.example.secondmvvmtrainingproject.presentation.pokemonbooklist.view.PokemonBookActivity
 import com.example.secondmvvmtrainingproject.presentation.pokemongame.view.PokemonGameActivity
@@ -172,7 +173,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.pokemon_book -> startActivity(Intent(this, PokemonBookActivity::class.java))
             R.id.my_team -> startActivity(Intent(this, PokemonTeamActivity::class.java))
             R.id.play_game -> startActivity(Intent(this, PokemonGameActivity::class.java))
-            R.id.my_records -> Toast.makeText(this, "my_records", Toast.LENGTH_SHORT).show()
+            R.id.game_info -> startActivity(Intent(this, GameInfoActivity::class.java))
             R.id.action_profile -> {
                 val fragment = ProfileFragment()
                 supportFragmentManager.beginTransaction().add(R.id.dlDrawerLayout, fragment).addToBackStack(null).commit()

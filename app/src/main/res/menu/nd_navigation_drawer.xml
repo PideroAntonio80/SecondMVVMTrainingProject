@@ -16,9 +16,9 @@
             android:title="@string/menu_item_Play"
             android:icon="@drawable/ic_play_circle_filled"/>
         <item
-            android:id="@+id/my_records"
-            android:title="@string/menu_item_player_records"
-            android:icon="@drawable/ic_storage"/>
+            android:id="@+id/game_info"
+            android:title="@string/menu_item_game_info"
+            android:icon="@drawable/ic_help_center"/>
         <item
             android:id="@+id/action_profile"
             android:title="@string/menu_item_edit_user"

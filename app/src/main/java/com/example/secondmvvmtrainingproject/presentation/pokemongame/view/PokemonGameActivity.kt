@@ -12,9 +12,9 @@ import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.ActivityPokemonGameBinding
 import com.example.secondmvvmtrainingproject.domain.model.pokemons.PokemonEntityGame
 import com.example.secondmvvmtrainingproject.presentation.pokemongame.utils.gameAlgorithm
+import com.example.secondmvvmtrainingproject.presentation.pokemongame.view.fragments.OptionsFragment
 import com.example.secondmvvmtrainingproject.presentation.pokemongame.viewmodel.PokemonGameViewModel
 import com.example.secondmvvmtrainingproject.presentation.pokemonteam.view.PokemonTeamActivity
-import com.example.secondmvvmtrainingproject.presentation.secretroomar.SecretRoomARActivity
 import com.google.android.material.snackbar.Snackbar
 
 class PokemonGameActivity : AppCompatActivity() {
@@ -57,10 +57,7 @@ class PokemonGameActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        mediaPlayer = MediaPlayer.create(this, R.raw.pksound)
-//        mediaPlayer?.start()
-//        mediaPlayer?.stop()
-//        mediaPlayer?.release()
+        mediaPlayer = MediaPlayer.create(this, R.raw.rocky)
     }
 
     private fun setMyTeamGame() {
@@ -94,11 +91,16 @@ class PokemonGameActivity : AppCompatActivity() {
             mediaPlayer?.start()
         }
         binding.mbRestart.setOnClickListener {
+            mediaPlayer?.stop()
+            mediaPlayer?.release()
+            mediaPlayer = null
             finish()
             reload()
         }
         binding.mbSecretRoom.setOnClickListener {
-            startActivity(Intent(this, SecretRoomARActivity::class.java))
+            binding.game.visibility = View.GONE
+            val fragment = OptionsFragment()
+            supportFragmentManager.beginTransaction().add(R.id.containerGame, fragment).addToBackStack(null).commit()
         }
     }
 
@@ -137,9 +139,7 @@ class PokemonGameActivity : AppCompatActivity() {
             animationView.playAnimation()
 
             animationView.addAnimatorListener(object : Animator.AnimatorListener {
-                override fun onAnimationRepeat(animation: Animator?) {
-                    //Do nothing
-                }
+                override fun onAnimationRepeat(animation: Animator?) {}
 
                 override fun onAnimationEnd(animation: Animator?) {
                     if (myPok1.victory) {
@@ -161,9 +161,7 @@ class PokemonGameActivity : AppCompatActivity() {
                     animationView2.playAnimation()
 
                     animationView2.addAnimatorListener(object : Animator.AnimatorListener {
-                        override fun onAnimationRepeat(animation: Animator?) {
-                            //Do nothing
-                        }
+                        override fun onAnimationRepeat(animation: Animator?) {}
 
                         override fun onAnimationEnd(animation: Animator?) {
                             if (myPok2.victory) {
@@ -185,9 +183,7 @@ class PokemonGameActivity : AppCompatActivity() {
                             animationView3.playAnimation()
 
                             animationView3.addAnimatorListener(object : Animator.AnimatorListener {
-                                override fun onAnimationRepeat(animation: Animator?) {
-                                    //Do nothing
-                                }
+                                override fun onAnimationRepeat(animation: Animator?) {}
 
                                 override fun onAnimationEnd(animation: Animator?) {
                                     if (myPok3.victory) {
@@ -211,7 +207,7 @@ class PokemonGameActivity : AppCompatActivity() {
                                     if (myVictories >=2) {
                                         tvResultWin.visibility = View.VISIBLE
                                         tvResultWin.animate().apply {
-                                            mediaPlayer = MediaPlayer.create(this@PokemonGameActivity, R.raw.pksound)
+                                            mediaPlayer = MediaPlayer.create(this@PokemonGameActivity, R.raw.winbattle)
                                             mediaPlayer?.start()
                                             duration = 3000
                                             rotationYBy(360f)
@@ -227,7 +223,7 @@ class PokemonGameActivity : AppCompatActivity() {
                                     } else {
                                         tvResultLose.visibility = View.VISIBLE
                                         tvResultLose.animate().apply {
-                                            mediaPlayer = MediaPlayer.create(this@PokemonGameActivity, R.raw.pksound)
+                                            mediaPlayer = MediaPlayer.create(this@PokemonGameActivity, R.raw.loser)
                                             mediaPlayer?.start()
                                             duration = 3000
                                             rotationYBy(360f)
@@ -243,9 +239,7 @@ class PokemonGameActivity : AppCompatActivity() {
                                     animationView3.visibility = View.GONE
                                 }
 
-                                override fun onAnimationStart(animation: Animator?) {
-                                    //Do nothing
-                                }
+                                override fun onAnimationStart(animation: Animator?) {}
                             })
                         }
 
@@ -253,9 +247,7 @@ class PokemonGameActivity : AppCompatActivity() {
                             animationView2.visibility = View.GONE
                         }
 
-                        override fun onAnimationStart(animation: Animator?) {
-                            //Do nothing
-                        }
+                        override fun onAnimationStart(animation: Animator?) {}
                     })
                 }
 

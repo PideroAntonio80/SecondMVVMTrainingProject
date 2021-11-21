@@ -10,7 +10,7 @@
     android:layout_height="match_parent"
     tools:openDrawer="start"
 
-    tools:context=".presentation.main.MainActivity">
+    tools:context=".presentation.main.view.MainActivity">
 
     <include
         layout="@layout/app_bar_main"

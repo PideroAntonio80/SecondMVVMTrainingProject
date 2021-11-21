@@ -16,7 +16,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    
+
     <style name="bnbNavigator">
         <item name="android:background">?attr/colorPrimary</item>
         <item name="itemIconTint">@color/white</item>
@@ -28,4 +28,13 @@
         <item name="itemIconTint">@color/white</item>
         <item name="itemTextColor">@color/white</item>
     </style>
+
+    <style name="Theme.SecondMVVMTrainingProject.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SecondMVVMTrainingProject.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SecondMVVMTrainingProject.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

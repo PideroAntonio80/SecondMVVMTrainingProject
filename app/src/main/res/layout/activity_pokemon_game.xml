@@ -5,14 +5,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
+    android:id="@+id/containerGame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/common_padding_default"
-    android:background="@color/black"
 
     tools:context=".presentation.pokemongame.view.PokemonGameActivity">
 
-    <ImageButton
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/common_padding_default"
+        android:background="@color/black">
+
+        <ImageButton
         android:id="@+id/ibMyPok1"
         android:layout_width="@dimen/pokemon_game_image_size"
         android:layout_height="@dimen/pokemon_game_image_size"
@@ -390,5 +396,7 @@
         app:lottie_fileName="75710-boxing-animation.json"
         app:lottie_loop="true"
         android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

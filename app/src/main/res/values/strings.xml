@@ -61,4 +61,15 @@
     <string name="winning_battle_result">YOU WIN</string>
     <string name="losing_battle_result">YOU LOSE</string>
     <string name="winning_result_battle">YOU WIN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="option_prize_cow">Vaca</string>
+    <string name="option_prize_baby_elephant">Bebé Elefante</string>
+    <string name="option_prize_pikachu">Pikachu</string>
+    <string name="option_prize_pokemon_ball">Bola Pokemon</string>
+    <string name="option_prize_otro">Otro</string>
+    <string name="option_prize_otro_mas">Otro más</string>
+    <string name="material_button_continue">Continue</string>
+    <string name="fragment_options_title">Escoge Premio y continua</string>
+    <string name="menu_item_game_info">About the game</string>
 </resources>

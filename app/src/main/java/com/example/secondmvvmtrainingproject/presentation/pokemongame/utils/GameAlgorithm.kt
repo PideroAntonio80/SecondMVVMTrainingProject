@@ -238,7 +238,7 @@ fun gameAlgorithm(good: PokemonEntityGame, enemy: PokemonEntityGame) {
         }
         "Poison" -> {
             when (enemy.type) {
-                "Ice", "Fighting", "Electric", "Fire", "grass", "Normal", -> {
+                "Ice", "Fighting", "Electric", "Fire", "Grass", "Normal", -> {
                     good.victory = true
                     enemy.victory = false
                 }
@@ -259,7 +259,7 @@ fun gameAlgorithm(good: PokemonEntityGame, enemy: PokemonEntityGame) {
         }
         "Normal" -> {
             when (enemy.type) {
-                "Ground", "Rock", "Bug", "Water", "grass" -> {
+                "Ground", "Rock", "Bug", "Water", "Grass" -> {
                     good.victory = true
                     enemy.victory = false
                 }
@@ -284,7 +284,7 @@ fun gameAlgorithm(good: PokemonEntityGame, enemy: PokemonEntityGame) {
                     good.victory = true
                     enemy.victory = false
                 }
-                "Ice", "Ghost", "Fighting", "Electric", "grass", "Normal" -> {
+                "Ice", "Ghost", "Fighting", "Electric", "Grass", "Normal" -> {
                     good.victory = false
                     enemy.victory = true
                 }

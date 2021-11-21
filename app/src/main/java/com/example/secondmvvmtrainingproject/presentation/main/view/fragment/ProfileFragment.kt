@@ -1,4 +1,4 @@
-package com.example.secondmvvmtrainingproject.presentation.main.fragment
+package com.example.secondmvvmtrainingproject.presentation.main.view.fragment
 
 import android.app.Activity
 import android.content.Intent
@@ -14,13 +14,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.FragmentProfileBinding
-import com.example.secondmvvmtrainingproject.presentation.main.MainActivity
 import com.example.secondmvvmtrainingproject.presentation.main.utils.Constants
 import com.example.secondmvvmtrainingproject.presentation.main.utils.MainAux
 import com.google.firebase.auth.FirebaseAuth

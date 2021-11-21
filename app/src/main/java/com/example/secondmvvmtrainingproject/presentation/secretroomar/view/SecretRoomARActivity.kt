@@ -1,13 +1,12 @@
-package com.example.secondmvvmtrainingproject.presentation.secretroomar
+package com.example.secondmvvmtrainingproject.presentation.secretroomar.view
 
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.example.secondmvvmtrainingproject.R
-import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.BABY_ELEPHANT
 import com.google.ar.core.Anchor
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.assets.RenderableSource
@@ -21,6 +20,8 @@ class SecretRoomARActivity : AppCompatActivity() {
     private var renderable: ModelRenderable? = null
     private lateinit var arFragment: ArFragment
 
+    private var myPrizeUrl = ""
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,12 @@ class SecretRoomARActivity : AppCompatActivity() {
 
         arFragment = supportFragmentManager.findFragmentById(R.id.ux_fragment) as ArFragment
 
-        downloadModel(BABY_ELEPHANT)
+        val bundle = intent.extras
+        if (bundle != null) {
+            myPrizeUrl = bundle.getString("my_option").toString()
+        }
+
+        downloadModel(myPrizeUrl)
 
         arFragment.setOnTapArPlaneListener { hitResult, plane, motionEvent ->
             if (renderable == null) { return@setOnTapArPlaneListener }
@@ -65,5 +71,10 @@ class SecretRoomARActivity : AppCompatActivity() {
                 toast.show()
                 return@exceptionally null
             }
+    }
+
+    override fun onBackPressed() {
+        onDestroy()
+        super.onBackPressed()
     }
 }
