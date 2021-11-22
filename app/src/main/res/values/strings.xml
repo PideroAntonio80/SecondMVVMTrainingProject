@@ -71,5 +71,84 @@
     <string name="option_prize_otro_mas">Otro más</string>
     <string name="material_button_continue">Continue</string>
     <string name="fragment_options_title">Escoge Premio y continua</string>
+
     <string name="menu_item_game_info">About the game</string>
+    <string name="game_info_title">GAME INFORMATION</string>
+    <string name="game_info_menu_general">1.General</string>
+    <string name="game_info_menu_game">2.Juego</string>
+
+    <string name="game_info_body_general">Pokemon Battle Card no es tanto un videojuego sino más bien una aplicación de entretenimiento infantil.\n\n Al entrar en la aplicación debes iniciar sesión si aún no lo habías hecho.\n\n Puedes autenticarte mediante usuario (cuenta de correo electrónico y contraseña), mediante una cuenta de Google, mediante una cuenta de Facebook o bien mediante número de teléfono (te llegará un SMS al número introducido con un código que te permitirá entrar en la aplicación).\n\n Una vez dentro te encontrarás con una pantalla principal en la que podrás desplegar un menú lateral con distintas opciones:\n\n - Libro de Pokemons: aquí dispondrás de un listado de Pokemons. Al pulsar cualquiera de ellos podrás ver su ficha técnica. Así mismo encontrarás un botón con un icono así “+” que podrás utilizar para añadir ese Pokemon a tu equipo (hasta un máximo de tres).\n\n En esta pantalla verás también una barra inferior de menú con tres opciones. Por defecto aparecerás en la lista de Pokemons. Las otras dos opciones son simplemente filtros de búsqueda. Una te ofrece la búsqueda por orden alfabético y la otra por medio de un buscador donde podrás escribir el nombre del Pokemon que deseas encontrar.\n\n - Mi Equipo: Aquí podrás ver tu equipo según los Pokemons que hayas elegido.\n\n  - Play: Este es el juego en cuestión que describiremos más detalladamente en el siguiente apartado.\n\n - Sobre el juego: Es el apartado en el que te encuentras, donde se proporciona información de esta aplicación.\n\n - Editar Perfil: Podrás editar ciertos datos de usuario como el nombre y una fotografía que podrás seleccionar de la galería de fotos de tu teléfono móvil.\n\n - Cerrar Sesión: Pulsando aquí cerrarás tu sesión. La siguiente vez que entres en la aplicación tendrás que autenticarte de nuevo.\n\n - Contáctanos: Información sobre el desarrollador de la aplicación.</string>
+
+    <string name="game_info_body_game">Al entrar en la pantalla de juego lo primero que verás será tu equipo (las fotos de tus tres Pokemon con su nombre debajo).\n\n
+Si tu equipo no estuviese completo, es decir, con menos de tres Pokemon, un mensaje te advertirá que no puedes comenzar a jugar hasta que completes tu equipo con tres Pokemon. Dicho mensaje te facilitará un enlace directo a la pantalla “Mi equipo” para que lo utilices si quieres. El juego permanecerá bloqueado hasta que completes tu equipo.\n\n
+Con tu equipo completo, comienza el juego. Frente a cada uno de tus tres Pokemon se situarán los de tu enemigo (que elegirá aleatoriamente el programa).\n\n
+Al principio se verá un signo de interrogación en las casillas de tus enemigos. Al pulsar el botón “Fight”, aparecerán tus enemigos y comenzará la batalla. Primero lucharán los dos primeros (tu primer Pokemon contra el primer Pokemon rival, luego los dos segundos y finalmente los tres terceros.\n\n
+Tras cada una de las tres batallas se podrá ver cuál de los dos ha ganado y cuál ha perdido.
+El ganador tendrá el signo verde positivo y el perdedor una “X” roja.\n\n
+El resultado de la batalla lo decide un algoritmo que explicaré a continuación:</string>
+
+    <string name="game_info_body_general_title">1.General</string>
+    <string name="game_info_body_game_title">2.Juego</string>
+
+    <string name="game_info_body_game_pokemon_type_title">TYPE</string>
+    <string name="game_info_body_game_pokemon_type_ice_win_title">WINS Vs.</string>
+    <string name="game_info_body_game_pokemon_type_ice_lose_title">LOSE Vs.</string>
+
+    <string name="game_info_body_game_pokemon_type_ice">Ice</string>
+    <string name="game_info_body_game_pokemon_type_ice_win">Dragon\nPsychic\nFighting\nBug\nGrass\nNormal\nWater</string>
+    <string name="game_info_body_game_pokemon_type_ice_lose">Ghost\nGround\nRock\nElectric\nFire\nPoison</string>
+
+    <string name="game_info_body_game_pokemon_type_dragon">Dragon</string>
+    <string name="game_info_body_game_pokemon_type_dragon_win">Ghost\nFighting\nElectric\nFire\nBug\nPoison\nNormal</string>
+    <string name="game_info_body_game_pokemon_type_dragon_lose">Ice\nPsychic\nGround\nRock\nGrass\nWater</string>
+
+    <string name="game_info_body_game_pokemon_type_ghost">Ghost</string>
+    <string name="game_info_body_game_pokemon_type_ghost_win">Ice\nFighting\nPsychic\nBug\nPoison\nNormal\nWater</string>
+    <string name="game_info_body_game_pokemon_type_ghost_lose">Dragon\nGround\nRock\nElectric\nFire\nGrass</string>
+
+    <string name="game_info_body_game_pokemon_type_fighting">Fighting</string>
+    <string name="game_info_body_game_pokemon_type_fighting_win">Ground\nRock\nBug\nGrass\nNormal\nWater\n</string>
+    <string name="game_info_body_game_pokemon_type_fighting_lose">Ice\nDragon\nGhost\nPsychic\nElectric\nFire\nPoison</string>
+
+    <string name="game_info_body_game_pokemon_type_psychic">Psychic</string>
+    <string name="game_info_body_game_pokemon_type_psychic_win">Dragon\nFighting\nFire\nBug\nGrass\nPoison\nNormal</string>
+    <string name="game_info_body_game_pokemon_type_psychic_lose">Ice\nGhost\nGround\nRock\nElectric\nWater</string>
+
+    <string name="game_info_body_game_pokemon_type_ground">Ground</string>
+    <string name="game_info_body_game_pokemon_type_ground_win">Ice\nDragon\nGhost\nPsychic\nRock\nElectric\nPoison</string>
+    <string name="game_info_body_game_pokemon_type_ground_lose">Fighting\nFire\nBug\nGrass\nNormal\nWater</string>
+
+    <string name="game_info_body_game_pokemon_type_rock">Rock</string>
+    <string name="game_info_body_game_pokemon_type_rock_win">Ice\nDragon\nGhost\nPsychic\nFire\nElectric\nPoison</string>
+    <string name="game_info_body_game_pokemon_type_rock_lose">Fighting\nGround\nBug\nGrass\nNormal\nWater</string>
+
+    <string name="game_info_body_game_pokemon_type_electric">Electric</string>
+    <string name="game_info_body_game_pokemon_type_electric_win">Ice\nGhost\nFighting\nPsychic\nFire\nNormal\nWater</string>
+    <string name="game_info_body_game_pokemon_type_electric_lose">Dragon\nGround\nRock\nBug\nGrass\nPoison</string>
+
+    <string name="game_info_body_game_pokemon_type_fire">Fire</string>
+    <string name="game_info_body_game_pokemon_type_fire_win">Ice\nGhost\nFighting\nGround\nBug\nGrass\nNormal</string>
+    <string name="game_info_body_game_pokemon_type_fire_lose">Dragon\nPsychic\nRock\nElectric\nPoison\nWater</string>
+
+    <string name="game_info_body_game_pokemon_type_bug">Bug</string>
+    <string name="game_info_body_game_pokemon_type_bug_win">Ground\nRock\nElectric\nGrass\nPoison\n\n\n</string>
+    <string name="game_info_body_game_pokemon_type_bug_lose">Ice\nDragon\nGhost\nFighting\nPsychic\nFire\nNormal\nWater</string>
+
+    <string name="game_info_body_game_pokemon_type_grass">Grass</string>
+    <string name="game_info_body_game_pokemon_type_grass_win">Dragon\nGhost\nGround\nRock\nElectric\nWater\n</string>
+    <string name="game_info_body_game_pokemon_type_grass_lose">Ice\nFighting\nPsychic\nFire\nBug\nPoison\nNormal</string>
+
+    <string name="game_info_body_game_pokemon_type_poison">Poison</string>
+    <string name="game_info_body_game_pokemon_type_poison_win">Ice\nFighting\nElectric\nFire\ngrass\nNormal\n</string>
+    <string name="game_info_body_game_pokemon_type_poison_lose">Dragon\nGhost\nPsychic\nGround\nRock\nBug\nWater</string>
+
+    <string name="game_info_body_game_pokemon_type_normal">Normal</string>
+    <string name="game_info_body_game_pokemon_type_normal_win">Ground\nRock\nBug\nWater\ngrass\n\n\n</string>
+    <string name="game_info_body_game_pokemon_type_normal_lose">Ice\nDragon\nGhost\nFighting\nPsychic\nElectric\nFire\nPoison</string>
+
+    <string name="game_info_body_game_pokemon_type_water">Water</string>
+    <string name="game_info_body_game_pokemon_type_water_win">Dragon\nPsychic\nGround\nRock\nFire\nBug\nPoison</string>
+    <string name="game_info_body_game_pokemon_type_water_lose">Ice\nGhost\nFighting\nElectric\ngrass\nNormal</string>
+
+    <string name="game_info_body_after_game">Tras finalizar la batalla de tres contra tres si has ganado al menos dos veces serás el ganador. En caso contrario, pierdes la batalla.\n\n Hay un botón en la parte inferior de la pantalla que dice “Secret Room” y que se encuentra bloqueado al iniciar el juego.\n\n Si ganas se desbloqueará el botón de “Secret Room” y al pulsar podrás acceder a una pantalla en la que podrás seleccionar un premio.\n\n Al pulsar “Continue” tu teléfono se pondrá en modo cámara y cuando tu premio se haya descargado al tocar sobre la pantalla (en la superficie punteada que se creará) aparecerá tu premio delante de ti por medio de la tecnología de AR (realidad aumentada)</string>
 </resources>
