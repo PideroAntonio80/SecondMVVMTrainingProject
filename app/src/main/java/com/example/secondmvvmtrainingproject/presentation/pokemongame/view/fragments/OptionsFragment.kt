@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.example.secondmvvmtrainingproject.databinding.FragmentOptionsBinding
+import com.example.secondmvvmtrainingproject.presentation.biometricauth.BiometricAuthActivity
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.BULBASAUR
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.EEVEE
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.MEW
@@ -58,7 +59,7 @@ class OptionsFragment : Fragment() {
                     binding.rbEevee.isChecked -> option = EEVEE
                     binding.rbPokemonBall.isChecked -> option = POKEBALL
                 }
-                val intent = Intent(activity, SecretRoomARActivity::class.java)
+                val intent = Intent(activity, BiometricAuthActivity::class.java)
                 intent.putExtra("my_option", option)
                 startActivity(intent)
                 onDestroy()

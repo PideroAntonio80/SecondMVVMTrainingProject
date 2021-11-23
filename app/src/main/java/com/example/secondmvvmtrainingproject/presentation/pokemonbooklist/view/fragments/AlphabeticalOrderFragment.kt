@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.secondmvvmtrainingproject.R
 import com.example.secondmvvmtrainingproject.databinding.FragmentAlphabeticalOrderBinding
@@ -39,7 +40,9 @@ class AlphabeticalOrderFragment : Fragment(), PokemonAdapter.ItemClickListener {
     }
 
     private fun initView(myPokemons: ArrayList<PokemonDataModel>) {
-        val layoutManager = LinearLayoutManager(binding.root.context, LinearLayoutManager.VERTICAL, false)
+//        val layoutManager = LinearLayoutManager(binding.root.context, LinearLayoutManager.VERTICAL, false)
+        val layoutManager = GridLayoutManager(binding.root.context, 2)
+
         binding.rvRecyclerAphabeticalList.layoutManager = layoutManager
         binding.rvRecyclerAphabeticalList.adapter = PokemonAdapter(myPokemons, binding.root.context, this)
     }

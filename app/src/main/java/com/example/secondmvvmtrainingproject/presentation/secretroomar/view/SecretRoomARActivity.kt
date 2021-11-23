@@ -31,7 +31,7 @@ class SecretRoomARActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         if (bundle != null) {
-            myPrizeUrl = bundle.getString("my_option").toString()
+            myPrizeUrl = bundle.getString("option").toString()
         }
 
         downloadModel(myPrizeUrl)

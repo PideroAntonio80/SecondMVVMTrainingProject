@@ -7,6 +7,7 @@
     android:id="@+id/flFragmentOne"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/common_padding_extra_extra_min"
     android:background="@color/light_blue_900_light"
 
     tools:context=".presentation.pokemonbooklist.view.fragments.AllListFragment">
@@ -14,6 +15,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRecyclerAllList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:listitem="@layout/pokemon_row_grid"/>
 
 </FrameLayout>

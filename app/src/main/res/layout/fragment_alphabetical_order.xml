@@ -7,6 +7,8 @@
     android:id="@+id/flFragmentTwo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/common_padding_extra_extra_min"
+    android:background="@color/light_blue_900_light"
 
     tools:context=".presentation.pokemonbooklist.view.fragments.AlphabeticalOrderFragment">
 
@@ -14,6 +16,6 @@
         android:id="@+id/rvRecyclerAphabeticalList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/light_blue_900_light"/>
+        tools:listitem="@layout/pokemon_row_grid"/>
 
 </FrameLayout>

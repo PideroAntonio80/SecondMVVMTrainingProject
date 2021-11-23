@@ -19,16 +19,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondMVVMTrainingProject"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".presentation.biometricauth.BiometricAuthActivity"
+            android:exported="true" />
+
         <meta-data
             android:name="com.google.ar.core"
             android:value="required" />
 
         <activity
             android:name=".presentation.gameinfo.GameInfoActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".presentation.main.view.MainActivity" />
         <activity
             android:name=".presentation.secretroomar.view.SecretRoomARActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".presentation.main.view.MainActivity" />
         <activity
             android:name=".presentation.pokemongame.view.PokemonGameActivity"
             android:exported="true" />
