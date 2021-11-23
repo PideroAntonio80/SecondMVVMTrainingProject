@@ -9,8 +9,12 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.example.secondmvvmtrainingproject.databinding.FragmentOptionsBinding
-import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.BABY_ELEPHANT
-import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.COW
+import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.BULBASAUR
+import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.EEVEE
+import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.MEW
+import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.PIKACHU
+import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.POKEBALL
+import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.PONYTA
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.view.SecretRoomARActivity
 
 class OptionsFragment : Fragment() {
@@ -45,12 +49,14 @@ class OptionsFragment : Fragment() {
         binding?.let { binding ->
             binding.bContinue.setOnClickListener {
                 when {
-                    binding.rbBabyElephant.isChecked -> option = BABY_ELEPHANT
-                    binding.rbCow.isChecked -> option = COW
-                    binding.rbPikachu.isChecked -> option = BABY_ELEPHANT
-                    binding.rbPokemonBall.isChecked -> option = COW
-                    binding.rbOtro.isChecked -> option = BABY_ELEPHANT
-                    binding.rbOtroMas.isChecked -> option = COW
+//                    binding.rbBabyElephant.isChecked -> option = BABY_ELEPHANT
+//                    binding.rbCow.isChecked -> option = COW
+                    binding.rbPikachu.isChecked -> option = PIKACHU
+                    binding.rbMew.isChecked -> option = MEW
+                    binding.rbPonyta.isChecked -> option = PONYTA
+                    binding.rbBulbasaur.isChecked -> option = BULBASAUR
+                    binding.rbEevee.isChecked -> option = EEVEE
+                    binding.rbPokemonBall.isChecked -> option = POKEBALL
                 }
                 val intent = Intent(activity, SecretRoomARActivity::class.java)
                 intent.putExtra("my_option", option)

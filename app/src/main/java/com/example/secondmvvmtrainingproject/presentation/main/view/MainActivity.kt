@@ -191,7 +191,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         Toast.makeText(this, R.string.error_closing_session, Toast.LENGTH_SHORT).show()
                     }
                 }
-            R.id.contact_us -> Toast.makeText(this, "contact_us", Toast.LENGTH_SHORT).show()
+//            R.id.contact_us -> Toast.makeText(this, "contact_us", Toast.LENGTH_SHORT).show()
         }
         drawer.closeDrawer(GravityCompat.START)
         return true

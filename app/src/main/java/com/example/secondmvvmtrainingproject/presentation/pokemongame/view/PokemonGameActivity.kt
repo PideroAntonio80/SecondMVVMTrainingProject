@@ -207,7 +207,7 @@ class PokemonGameActivity : AppCompatActivity() {
                                     if (myVictories >=2) {
                                         tvResultWin.visibility = View.VISIBLE
                                         tvResultWin.animate().apply {
-                                            mediaPlayer = MediaPlayer.create(this@PokemonGameActivity, R.raw.winbattle)
+                                            mediaPlayer = MediaPlayer.create(this@PokemonGameActivity, R.raw.applause)
                                             mediaPlayer?.start()
                                             duration = 3000
                                             rotationYBy(360f)

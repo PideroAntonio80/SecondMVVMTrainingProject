@@ -33,7 +33,7 @@
         android:layout_marginTop="@dimen/common_padding_default"
         android:layout_marginStart="@dimen/common_padding_default">
 
-        <RadioButton
+        <!--<RadioButton
             android:id="@+id/rbCow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:textStyle="bold"
             android:textColor="@color/light_blue_900_dark"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            android:buttonTint="@color/light_blue_900_dark"/>
+            android:buttonTint="@color/light_blue_900_dark"/>-->
 
         <RadioButton
             android:id="@+id/rbPikachu"
@@ -64,30 +64,50 @@
             android:buttonTint="@color/light_blue_900_dark"/>
 
         <RadioButton
+            android:id="@+id/rbMew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_prize_mew"
+            android:textStyle="bold"
+            android:textColor="@color/light_blue_900_dark"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:buttonTint="@color/light_blue_900_dark"/>
+
+        <RadioButton
+            android:id="@+id/rbPonyta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_prize_ponyta"
+            android:textStyle="bold"
+            android:textColor="@color/light_blue_900_dark"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:buttonTint="@color/light_blue_900_dark"/>
+
+        <RadioButton
+            android:id="@+id/rbBulbasaur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_prize_bulbasaur"
+            android:textStyle="bold"
+            android:textColor="@color/light_blue_900_dark"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:buttonTint="@color/light_blue_900_dark"/>
+
+        <RadioButton
+            android:id="@+id/rbEevee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_prize_eevee"
+            android:textStyle="bold"
+            android:textColor="@color/light_blue_900_dark"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:buttonTint="@color/light_blue_900_dark"/>
+
+        <RadioButton
             android:id="@+id/rbPokemonBall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/option_prize_pokemon_ball"
-            android:textStyle="bold"
-            android:textColor="@color/light_blue_900_dark"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            android:buttonTint="@color/light_blue_900_dark"/>
-
-        <RadioButton
-            android:id="@+id/rbOtro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/option_prize_otro"
-            android:textStyle="bold"
-            android:textColor="@color/light_blue_900_dark"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            android:buttonTint="@color/light_blue_900_dark"/>
-
-        <RadioButton
-            android:id="@+id/rbOtroMas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/option_prize_otro_mas"
             android:textStyle="bold"
             android:textColor="@color/light_blue_900_dark"
             android:textAppearance="?attr/textAppearanceHeadline6"
