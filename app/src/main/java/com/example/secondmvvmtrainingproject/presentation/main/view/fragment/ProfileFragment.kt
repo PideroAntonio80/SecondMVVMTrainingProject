@@ -93,7 +93,7 @@ class ProfileFragment : Fragment() {
         binding?.tbProfileToolbar?.setOnClickListener {
             activity?.onBackPressed()
         }
-        /* Esto sería de aquí debajo sería para la barra nativa de android pero
+        /* Esto de aquí debajo sería para la barra nativa de android pero
         como yo la anulé, me pinto la de arriba sólo para esta pantalla:
 
         (activity as? AppCompatActivity)?.let {

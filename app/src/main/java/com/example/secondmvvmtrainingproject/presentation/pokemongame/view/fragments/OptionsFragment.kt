@@ -16,7 +16,6 @@ import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.PIKACHU
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.POKEBALL
 import com.example.secondmvvmtrainingproject.presentation.secretroomar.constants.Constants.PONYTA
-import com.example.secondmvvmtrainingproject.presentation.secretroomar.view.SecretRoomARActivity
 
 class OptionsFragment : Fragment() {
 

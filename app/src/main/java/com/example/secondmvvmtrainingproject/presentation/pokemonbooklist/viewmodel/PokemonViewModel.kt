@@ -31,8 +31,3 @@ class PokemonViewModel : ViewModel() {
 
 
 
-/* fun addPokemon(pokemon: PokemonEntity) {
-        if (!pokemons.contains(pokemon)) {
-            pokemons.add(pokemon)
-        }
-    } */

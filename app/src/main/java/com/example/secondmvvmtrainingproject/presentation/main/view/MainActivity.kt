@@ -87,7 +87,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         firebaseAuth = FirebaseAuth.getInstance()
         authStateListener = FirebaseAuth.AuthStateListener { auth ->
             if (auth.currentUser != null) {
-                //supportActionBar?.title = auth.currentUser?.displayName
                 updateTitle(auth.currentUser!!)
 
                 progress.visibility = View.GONE
@@ -164,8 +163,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.setHomeButtonEnabled(true)
 
         binding.nvNavigationView.setNavigationItemSelectedListener(this)
-
-        //actionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -191,7 +188,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         Toast.makeText(this, R.string.error_closing_session, Toast.LENGTH_SHORT).show()
                     }
                 }
-//            R.id.contact_us -> Toast.makeText(this, "contact_us", Toast.LENGTH_SHORT).show()
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
